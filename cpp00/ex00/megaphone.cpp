@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmoran <lmoran@students.42.fr>             +#+  +:+       +#+        */
+/*   By: lmoran <lmoran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 10:24:09 by lmoran            #+#    #+#             */
-/*   Updated: 2024/05/14 14:22:22 by lmoran           ###   ########.fr       */
+/*   Updated: 2024/08/28 12:41:02 by lmoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 int main(int ac, char **av)
 {
-    std::string  no_arg = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    if (ac == 1)
-    {
-        std::cout << no_arg << std::endl;
-        return 0;
-    }
     std::string curr;
     for (int i = 1; i < ac; i++)
     {
@@ -28,6 +22,8 @@ int main(int ac, char **av)
             std::cout << (char)toupper(av[i][j]);
         std::cout << " ";
     }
+    if (ac == 1)
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     std::cout << std::endl;
     return 0;
 }
