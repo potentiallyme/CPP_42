@@ -6,7 +6,7 @@
 /*   By: lmoran <lmoran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:22:46 by lmoran            #+#    #+#             */
-/*   Updated: 2024/08/28 16:50:32 by lmoran           ###   ########.fr       */
+/*   Updated: 2024/08/29 12:01:57 by lmoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class PhoneBook {
     private:
         Contact contacts[8];
+        int  i;
     public:
         PhoneBook();
         ~PhoneBook();
