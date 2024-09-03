@@ -6,7 +6,7 @@
 /*   By: lmoran <lmoran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:22:43 by lmoran            #+#    #+#             */
-/*   Updated: 2024/09/03 14:13:47 by lmoran           ###   ########.fr       */
+/*   Updated: 2024/09/03 15:15:13 by lmoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@ PhoneBook::PhoneBook(){
 
 PhoneBook::~PhoneBook(){
     std::cout << std::endl << "Phonebook burnt, destroyed, anihilated... bye-bye!" << std::endl << std::endl;
+}
+
+bool check_nbr(std::string str){
+    if (str.size() != 10)
+        return false;
+    for (std::string::iterator it = str.begin(); it != str.end(); ++it){
+        if (!isdigit(*it))
+            return false;
+    }
+    return true;
 }
 
 void PhoneBook::add(void){
@@ -60,15 +70,16 @@ void PhoneBook::add(void){
         }
         contacts[i].set_info("nn", input);}
     input = "";
-    while (!std::cin.eof() && input.size() != 10){
+    while (!std::cin.eof()){
         std::cout << "  Enter a 10 digit number for the contact: ";
         std::getline(std::cin, input);
         if (input == "EXIT"){
             contacts[i].set_info("fn", "");
             return;
         }
-        if (input.size() == 10)
+        if (check_nbr(input) == true){
             contacts[i].set_info("pn", input);
+            break;}
     }
     input = "";
     if (!std::cin.eof() && input == ""){
@@ -106,11 +117,11 @@ void PhoneBook::search(void){
             return;
         intex = std::atoi(index.c_str());
         if ((index.size() != 1 || intex < 1 || intex > 8))
-            std::cout << std::endl << "Please enter a number between 1 and 8: " << std::endl;
+            std::cout << std::endl << "Please enter a number between 1 and 8. " << std::endl;
         else if (!contacts[intex - 1].check_exist())
             return;
         else{
-            std::cout << "What specific info do you want for Contact number " << intex << " (leave empty for all info): ";
+            std::cout << "What specific info do you want for Contact number [" << intex << "] (leave empty for all info): ";
             std::getline(std::cin, info);
             if (info == "EXIT" || std::cin.eof())
                 return;
@@ -135,7 +146,7 @@ int main(void)
         if (r == 0){
             std::cout << std::endl << "Enter ADD to create a contact, SEARCH to look up info about contacts, and EXIT to... exit!" << std::endl;
             r++; }
-        std::cout << "=>";
+        std::cout << "=> ";
         std::getline(std::cin, input);
         if (input == "ADD"){
             phonebook.add();
