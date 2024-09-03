@@ -6,7 +6,7 @@
 /*   By: lmoran <lmoran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:22:43 by lmoran            #+#    #+#             */
-/*   Updated: 2024/08/29 13:49:22 by lmoran           ###   ########.fr       */
+/*   Updated: 2024/09/03 14:13:47 by lmoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ int main(void)
         if (r == 0){
             std::cout << std::endl << "Enter ADD to create a contact, SEARCH to look up info about contacts, and EXIT to... exit!" << std::endl;
             r++; }
-        std::cout << "●｠";
+        std::cout << "=>";
         std::getline(std::cin, input);
         if (input == "ADD"){
             phonebook.add();
