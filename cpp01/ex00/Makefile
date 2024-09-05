@@ -1,4 +1,4 @@
-SRC = Account.cpp tests.cpp
+SRC = Zombie.cpp newZombie.cpp randomChump.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
