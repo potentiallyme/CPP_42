@@ -1,10 +1,10 @@
-SRC = phonebook.cpp contact.cpp
+SRC = PhoneBook.cpp Contact.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = phonebook
+NAME = PhoneBook
 
 all: $(NAME)
 

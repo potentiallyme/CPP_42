@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmoran <lmoran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:44:46 by lmoran            #+#    #+#             */
-/*   Updated: 2024/08/29 13:26:55 by lmoran           ###   ########.fr       */
+/*   Updated: 2024/09/03 15:21:09 by lmoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 class Contact {
     private: 
-        std::string fn;
-        std::string ln;
-        std::string nn;
-        std::string pn;
-        std::string sc;
+        std::string _fn;
+        std::string _ln;
+        std::string _nn;
+        std::string _pn;
+        std::string _sc;
     public:
         Contact(void);
         ~Contact(void);
