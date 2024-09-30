@@ -12,7 +12,7 @@ int main(void){
 	{
 		Weapon something = Weapon("sword");
 		HumanB john("John");
-		// john.setWeapon(something);
+		john.setWeapon(something);
 		john.attack();
 		something.setType("log");
 		john.setWeapon(something);

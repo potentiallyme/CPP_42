@@ -12,12 +12,12 @@ int main( void ) {
 	
 	//2.56 ; 2.08 part of the vertex
 	Point Tc(0, 0);
-	Point Ta(5.12, 4.16);
-	Point Tb(1.18, -6.49);
+	Point Ta(5.12f, 4.16f);
+	Point Tb(1.18f, -6.49f);
 
-	Point Tx(0, 3.02);
-	Point Ty(5, 3.02);
-	Point Tz(2.5, 0);
+	Point Tx(0, 3.02f);
+	Point Ty(5, 3.02f);
+	Point Tz(2.5f, 0);
 
 	// One of the vertexes
 	std::cout << std::endl;
@@ -45,7 +45,7 @@ int main( void ) {
 
 	// On the edge
 	std::cout << std::endl;
-	std::cout << "P5: on the edge, should be false" << std::endl;
+	std::cout << "P5: on the edge, should be true" << std::endl;
 	std::cout << "x: " << P5.getx() << " y: " << P5.gety() << std::endl;
 	std::cout << "BSP Return value: " << bsp(Ta, Tb, Tc, P5) << std::endl;
 

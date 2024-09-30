@@ -32,7 +32,6 @@ void Harl::complain(std::string level){
 			(this->*(harl_funcs[i]))();
 			return;
 		}
-		if (i == 3)
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }

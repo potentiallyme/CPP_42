@@ -1,16 +1,20 @@
 #include "Point.hpp"
 
 float s(Point const &a, Point const &b, Point const &c){
-	return ((a.getx() - c.getx()) * (b.gety() - c.gety()) - \
-		(b.getx() - c.getx()) * (a.gety() - c.gety()));
+	return (std::abs((a.getx() * (b.gety() - c.gety()) + b.getx()
+			* (c.gety() - a.gety()) + c.getx() * (a.gety() - b.gety())) / 2.0));
 }
 
 bool bsp(Point const &a, Point const &b, Point const &c, 
 		Point const &p){
-	float s1 = s(p, a, b);
-	float s2 = s(p, b, c);
-	float s3 = s(p, c, a);
-	bool neg = (s1 < 0) || (s2 < 0) || (s3 < 0);
-	bool pos = (s1 > 0) || (s2 > 0) || (s3 > 0);
-	return !(neg && pos);
+	float abc = s(a, b, c);
+	float pbc = s(p, b, c);
+	float apc = s(a, p, c);
+	float abp = s(a, b, p);
+	if (pbc == 0 || apc == 0 || abp == 0)
+		return false;
+	if (abc == (pbc + apc + abp))
+		return true;
+	else
+		return false;
 }

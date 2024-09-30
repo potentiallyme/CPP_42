@@ -4,12 +4,15 @@ CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = Fixed
+NAME = Bsp
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+
+.cpp.o:
+	$(CC) $(CPPFLAGS) -c $< -o ${<:.cpp=.o}
 
 clean:
 	$(RM) $(OBJ)

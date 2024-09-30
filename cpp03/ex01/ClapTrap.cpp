@@ -16,6 +16,20 @@ ClapTrap::~ClapTrap(){
 	}
 }
 
+ClapTrap::ClapTrap(ClapTrap const &other){
+	*this = other;
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap const &other){
+	if (this != &other){
+		this->_name = other._name;
+		this->_ad = other._ad;
+		this->_mana = other._mana;
+		this->_hp = other._hp;
+	}
+	return *this;
+}
+
 ClapTrap::ClapTrap(std::string name): _hp(10), _mana(10), _ad(0), _name(name){
 	std::cout << purple << "ClapTrap " << name;
 	std::cout << reset << ": Let's get this party started!" << std::endl;
@@ -90,4 +104,38 @@ void ClapTrap::printStats(){
 	std::cout << "> ENERGY POINTS: " << _mana << std::endl;
 	std::cout << "> ATTACK DAMAGE: " << _ad << std::endl;
 	std::cout << reset << std::endl;
+}
+
+/** ScavTrap Functions **/
+
+void ClapTrap::setName(std::string name){
+	_name = name;
+}
+
+std::string ClapTrap::retName(){
+	return _name;
+}
+
+void ClapTrap::setHp(int hp){
+	_hp = hp;
+}
+
+int ClapTrap::retHp(){
+	return _hp;
+}
+
+void ClapTrap::setMana(int mana){
+	_mana = mana;
+}
+
+int ClapTrap::retMana(){
+	return _mana;
+}
+
+void ClapTrap::setAd(int ad){
+	_ad = ad;
+}
+
+int ClapTrap::retAd(){
+	return _ad;
 }
