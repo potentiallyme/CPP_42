@@ -1,11 +1,11 @@
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main(void){
-	ScavTrap def1;
-	ScavTrap def2(def1);
-	ScavTrap bob("Bob");
-	ScavTrap lulu("Lulu");
-	// std::cout << "hey" << std::endl;
+	FragTrap def1;
+	FragTrap def2(def1);
+	FragTrap bob("Bob");
+	FragTrap lulu("Lulu");
 	bob.takeDamage(33);
 	lulu = bob;
 	lulu.attack("a scary enemy");
@@ -15,5 +15,5 @@ int main(void){
 	bob.printStats();
 	lulu.printStats();
 	def2.printStats();
-	lulu.guardGate();
+	lulu.highFiveGuys();
 }

@@ -1,8 +1,8 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _hp(10), _mana(10), _ad(0){
-	// std::cout << purple << _name << reset << " Battlebot go -- Oh that's me!" << std::endl;
-	// std::cout << green << "[" << _name << " created]" << reset << std::endl << std::endl;
+ClapTrap::ClapTrap(): _hp(10), _mana(10), _ad(0), _name("Default ClapTrap"){
+	std::cout << purple << _name << reset << " Battlebot go -- Oh that's me!" << std::endl;
+	std::cout << green << "[" << _name << " created]" << reset << std::endl << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
@@ -24,7 +24,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &other){
 	return *this;
 }
 
-ClapTrap::ClapTrap(std::string name): _hp(10), _mana(10), _ad(0), _name(name){
+ClapTrap::ClapTrap(std::string name): _hp(10), _mana(10), _ad(0), _name("ClapTrap " + name){
 	std::cout << purple << _name;
 	std::cout << reset << ": Let's get this party started!" << std::endl;
 	std::cout << green << "[" << _name << " created]" << reset << std::endl << std::endl;
