@@ -1,3 +1,4 @@
 *.py
 *.o
 .vscode
+.vscode/settings.json
