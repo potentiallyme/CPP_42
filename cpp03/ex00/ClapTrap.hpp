@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <cmath>
+#include "Macros.hpp"
 
 class ClapTrap{
 	private:
@@ -16,6 +17,8 @@ class ClapTrap{
 		~ClapTrap();
 
 		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &);
+		ClapTrap& operator=(const ClapTrap &);
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

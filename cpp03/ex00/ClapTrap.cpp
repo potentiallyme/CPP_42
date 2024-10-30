@@ -22,6 +22,21 @@ ClapTrap::ClapTrap(std::string name): _hp(10), _mana(10), _ad(0), _name(name){
 	std::cout << green << "[ClapTrap " << name << " created]" << reset << std::endl << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other)
+:_hp(other._hp), _mana(other._mana), _ad(other._ad), _name(other._name){
+	COPY
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap const &other){
+	if (this != &other){
+		this->_name = other._name;
+		this->_ad = other._ad;
+		this->_mana = other._mana;
+		this->_hp = other._hp;
+	}
+	return *this;
+}
+
 void ClapTrap::attack(const std::string& target){
 	if (_name.empty())
 		std::cout << purple << "Default ClapTrap";

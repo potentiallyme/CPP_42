@@ -10,8 +10,9 @@ ClapTrap::~ClapTrap(){
 	// std::cout << red << "[" << _name << " destroyed]" << reset << std::endl << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &other){
-	*this = other;
+ClapTrap::ClapTrap(const ClapTrap &other)
+:_hp(other._hp), _mana(other._mana), _ad(other._ad), _name(other._name){
+	COPY
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &other){

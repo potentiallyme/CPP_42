@@ -5,6 +5,7 @@ int main(void){
 	ClapTrap def2;
 	ClapTrap bob("Bob");
 	ClapTrap lulu("Lulu");
+	ClapTrap bob2(bob);
 
 	lulu.attack("a scary enemy");
 	def1.attack("Bob");

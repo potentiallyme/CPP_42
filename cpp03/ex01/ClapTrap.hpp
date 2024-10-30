@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <cmath>
+#include "Macros.hpp"
 
 class ClapTrap{
 	protected:
