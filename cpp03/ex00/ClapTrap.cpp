@@ -1,35 +1,36 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): _hp(10), _mana(10), _ad(0){
-	std::cout << purple << "Default ClapTrap:" << reset << " Battlebot go -- Oh that's me" << std::endl;
-	std::cout << green << "[Default ClapTrap created]" << reset << std::endl << std::endl;
+	std::cout << PURPLE << "Default ClapTrap:" << RESET << " Battlebot go -- Oh that's me" << std::endl;
+	std::cout << BGREEN << "[Default ClapTrap created]" << RESET << std::endl << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
 	if (_name.empty()){
-		std::cout << purple << "Default ClapTrap:" << reset << " I'll die the way I lived: annoying!" << std::endl;
-		std::cout << red << "[Default ClapTrap destroyed]" << reset << std::endl << std::endl;
+		std::cout << PURPLE << "Default ClapTrap:" << RESET << " I'll die the way I lived: annoying!" << std::endl;
+		std::cout << BRED << "[Default ClapTrap destroyed]" << RESET << std::endl << std::endl;
 	}
 	else{
-		std::cout << purple << "ClapTrap " << _name << reset << ": Argh arghargh death gurgle gurglegurgle urgh... death." << std::endl;
-		std::cout << red << "[ClapTrap " << _name << " destroyed]" << reset << std::endl << std::endl;
+		std::cout << PURPLE << "ClapTrap " << _name << ": ";
+		std::cout << RESET << "Argh arghargh death gurgle gurglegurgle urgh... death." << std::endl;
+		std::cout << BRED << "[ClapTrap " << _name << " destroyed]" << RESET << std::endl << std::endl;
 	}
 }
 
 ClapTrap::ClapTrap(std::string name): _hp(10), _mana(10), _ad(0), _name(name){
-	std::cout << purple << "ClapTrap " << name;
-	std::cout << reset << ": Let's get this party started!" << std::endl;
-	std::cout << green << "[ClapTrap " << name << " created]" << reset << std::endl << std::endl;
+	std::cout << PURPLE << "ClapTrap " << name << ": ";
+	std::cout << RESET << "Let's get this party started!" << std::endl;
+	std::cout << BGREEN << "[ClapTrap " << name << " created]" << RESET << std::endl << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
-:_hp(other._hp), _mana(other._mana), _ad(other._ad), _name(other._name){
-	COPY
+:_hp(other._hp), _mana(other._mana), _ad(other._ad), _name(other._name + "Copy"){
+	COPY("ClapTrap")
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &other){
 	if (this != &other){
-		this->_name = other._name;
+		this->_name = other._name + "Clone";
 		this->_ad = other._ad;
 		this->_mana = other._mana;
 		this->_hp = other._hp;
@@ -39,10 +40,10 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &other){
 
 void ClapTrap::attack(const std::string& target){
 	if (_name.empty())
-		std::cout << purple << "Default ClapTrap";
+		std::cout << PURPLE << "Default ClapTrap: ";
 	else
-		std::cout << purple << "ClapTrap " << _name;
-	std::cout << reset << ": Heyyah!" << std::endl << blue;
+		std::cout << PURPLE << "ClapTrap " << _name << ": ";
+	std::cout << RESET << "Heyyah!" << std::endl << BLUE;
 	if (_name.empty())
 		std::cout << "[Default ClapTrap";
 	else
@@ -50,20 +51,21 @@ void ClapTrap::attack(const std::string& target){
 	std::cout << " dealt " << _ad << " damage to " << target << "]" << std::endl;
 	std::cout << "[MANA (" << _mana << ") ==> (";
 	_mana -= 1;
-	std::cout << _mana << ")]" << reset << std::endl << std::endl;
+	std::cout << _mana << ")]" << RESET << std::endl << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
 
 	if (_name.empty())
-		std::cout << purple << "Default ClapTrap";
+		std::cout << PURPLE << "Default ClapTrap: ";
 	else
-		std::cout << purple << "ClapTrap " << _name;
+		std::cout << PURPLE << "ClapTrap " << _name << ": ";
 	if (_hp <= 0){
-		std::cout << purple << ": I'M DEAD I'M DEAD OHMYGOD I'M ALREADY DEAD!" << reset << std::endl;
+		std::cout << RESET << "I'M DEAD I'M DEAD OHMYGOD I'M ALREADY DEAD!" << RESET << std::endl;
+		std::cout << BLUE << "[This ClapTrap is dead and cannot take more damage until healed]" << std::endl;
 		return;
 	}
-	std::cout << reset << ": Ow hohoho, that hurts! Yipes!" << std::endl << blue;
+	std::cout << RESET << "Ow hohoho, that hurts! Yipes!" << std::endl << BLUE;
 	if (_name.empty())
 		std::cout << "[Default ClapTrap";
 	else
@@ -72,18 +74,18 @@ void ClapTrap::takeDamage(unsigned int amount){
 	_hp -= amount;
 	if (_hp < 0)
 		_hp = 0;
-	std::cout << _hp << ")]" << reset << std::endl << std::endl;
+	std::cout << _hp << ")]" << RESET << std::endl << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
 	if (_name.empty())
-		std::cout << purple << "Default ClapTrap";
+		std::cout << PURPLE << "Default ClapTrap: ";
 	else
-		std::cout << purple << "ClapTrap " << _name;
+		std::cout << PURPLE << "ClapTrap " << _name << ": ";
 	if (_hp == 0)
-		std::cout << reset << ": Are you god? Am I dead?" << std::endl << blue;
+		std::cout << RESET << "Are you god? Am I dead?" << std::endl << BLUE;
 	else
-		std::cout << reset << ": Health! Ooo, what flavor is red?" << std::endl << blue;
+		std::cout << RESET << "Health! Ooo, what flavor is red?" << std::endl << BLUE;
 	if (_name.empty())
 		std::cout << "[Default ClapTrap";
 	else
@@ -93,16 +95,16 @@ void ClapTrap::beRepaired(unsigned int amount){
 	_hp += amount;
 	std::cout << _hp << ") | MANA (" << _mana << ") ==> (";
 	_mana -= 1;
-	std::cout << _mana << ")]" << reset << std::endl << std::endl;
+	std::cout << _mana << ")]" << RESET << std::endl << std::endl;
 }
 
 void ClapTrap::printStats(){
 	if (_name.empty())
-		std::cout << lblue << "[Default ClapTrap STATS]";
+		std::cout << BBLUE << "[Default ClapTrap STATS]";
 	else
-		std::cout << lblue << "[ClapTrap " << _name << " STATS]";
-	std::cout << std::endl << blue << "> HEALTH POINTS: " << _hp << std::endl;
+		std::cout << BBLUE << "[ClapTrap " << _name << " STATS]";
+	std::cout << std::endl << BLUE << "> HEALTH POINTS: " << _hp << std::endl;
 	std::cout << "> ENERGY POINTS: " << _mana << std::endl;
 	std::cout << "> ATTACK DAMAGE: " << _ad << std::endl;
-	std::cout << reset << std::endl;
+	std::cout << RESET << std::endl;
 }

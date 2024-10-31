@@ -13,6 +13,7 @@
 #define PARAMETER(class_name) \
     std::cout<<BLUE<<"Parameterized constructor called for class "<<PURPLE<<class_name<<std::endl;
 
+
 //Base colors
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"

@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <cmath>
+#include "Macros.hpp"
 
 class ClapTrap{
 	protected:
@@ -25,12 +26,5 @@ class ClapTrap{
 		void beRepaired(unsigned int amount);
 		void printStats();
 };
-
-const std::string red("\033[0;31m");
-const std::string green("\033[0;32m");
-const std::string lblue("\033[1;34m");
-const std::string blue("\033[0;34m");
-const std::string purple("\033[0;35m");
-const std::string reset("\033[0m");
 
 #endif

@@ -1,19 +1,21 @@
 #include "ScavTrap.hpp"
 
 int main(void){
-	ScavTrap def1;
-	ScavTrap def2(def1);
-	ScavTrap bob("Bob");
-	ScavTrap lulu("Lulu");
-	// std::cout << "hey" << std::endl;
-	bob.takeDamage(33);
-	lulu = bob;
-	lulu.attack("a scary enemy");
-	def1.attack("Bob");
-	def2.takeDamage(12);
-	def2.beRepaired(2);
-	bob.printStats();
-	lulu.printStats();
-	def2.printStats();
-	lulu.guardGate();
+	ScavTrap scavTrap1;
+	ScavTrap scavTrap2(scavTrap1);
+	ScavTrap scavTrap3("John");
+	scavTrap3 = scavTrap2;
+
+	scavTrap1.attack("scavTrap2");
+	scavTrap2.takeDamage(5);
+	scavTrap1.attack("scavTrap3");
+	scavTrap3.takeDamage(11);
+	scavTrap3.takeDamage(1);
+	scavTrap2.beRepaired(5);
+	scavTrap1.guardGate();
+	scavTrap1.guardGate();
+
+	scavTrap1.printStats();
+	scavTrap2.printStats();
+	scavTrap3.printStats();
 }
