@@ -6,20 +6,22 @@ FragTrap::FragTrap() : ClapTrap(){
 	_mana = 100;
 	_ad = 30;
 	_name = "Default FragTrap";
-	std::cout << PURPLE << _name << ": " << RESET << "Fraaaaaaaaaaag time!" << std::endl;
-	std::cout << BGREEN << "[Default ClapTrap turned into a FragTrap]" << RESET << std::endl << std::endl;
+	// std::cout << PURPLE << _name << ": " << RESET << "Fraaaaaaaaaaag time!" << std::endl;
+	// std::cout << BGREEN << "[Default ClapTrap turned into a FragTrap]" << RESET << std::endl << std::endl;
+	CONSTRUCTOR("FragTrap")
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name){
 	_hp = 100;
 	_mana = 100;
 	_ad = 30;
-	_name = "FragTrap " + name;
-	std::cout << PURPLE << _name << ": " << RESET << "I ain't no basic Clap!" << std::endl;
-	std::cout << BGREEN << "[ClapTrap" << name << " turned into FragTrap " << name << "]" << RESET << std::endl << std::endl;
+	_name = name;
+	// std::cout << PURPLE << _name << ": " << RESET << "I ain't no basic Clap!" << std::endl;
+	// std::cout << BGREEN << "[ClapTrap" << name << " turned into FragTrap " << name << "]" << RESET << std::endl << std::endl;
+	PARAMETER("FragTrap")
 }
 
-FragTrap::FragTrap(FragTrap const &other) : ClapTrap(other){}
+FragTrap::FragTrap(FragTrap const &other) : ClapTrap(other){COPY("FragTrap")}
 
 FragTrap& FragTrap::operator=(FragTrap const &other){
 	if (this != &other){
@@ -29,8 +31,9 @@ FragTrap& FragTrap::operator=(FragTrap const &other){
 }
 
 FragTrap::~FragTrap(){
-	std::cout << PURPLE << _name << ": " << RESET << "Away with thee!" << std::endl;
-	std::cout << BRED << "[" << _name << " destroyed]" << RESET << std::endl << std::endl;
+	// std::cout << PURPLE << _name << ": " << RESET << "Away with thee!" << std::endl;
+	// std::cout << BRED << "[" << _name << " destroyed]" << RESET << std::endl << std::endl;
+	DESTRUCTOR("FragTrap")
 }
 
 void FragTrap::highFiveGuys(){

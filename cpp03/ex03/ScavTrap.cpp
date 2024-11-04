@@ -6,18 +6,20 @@ ScavTrap::ScavTrap(): ClapTrap(), _gK(0){
 	_ad = 20;
 	_name = "Default ScavTrap";
 	_gK = false;
-	std::cout << PURPLE << _name << ": " << RESET << "SC4V-TP ONL-L-LINE." << std::endl;
-	std::cout << BGREEN << "[" << _name << " created]" << RESET << std::endl << std::endl;
+	// std::cout << PURPLE << _name << ": " << RESET << "SC4V-TP ONL-L-LINE." << std::endl;
+	// std::cout << BGREEN << "[" << _name << " created]" << RESET << std::endl << std::endl;
+	CONSTRUCTOR("ScavTrap")
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap("ScavTrap " + name), _gK(0){
+ScavTrap::ScavTrap(std::string name): ClapTrap(name), _gK(0){
 	_hp = 100;
 	_mana = 50;
 	_ad = 20;
 	_gK = false;
-	// _name = "ScavTrap " + name;
-	std::cout << PURPLE << _name << ": " << RESET << "SCAVS AND SC4V." << std::endl;
-	std::cout << BGREEN << "[" << _name << " created]" << RESET << std::endl << std::endl;
+	_name = name;
+	// std::cout << PURPLE << _name << ": " << RESET << "SCAVS AND SC4V." << std::endl;
+	// std::cout << BGREEN << "[" << _name << " created]" << RESET << std::endl << std::endl;
+	PARAMETER("ScavTrap")
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other) : ClapTrap(other){
@@ -35,8 +37,9 @@ ScavTrap& ScavTrap::operator=(ScavTrap const &other){
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << PURPLE << _name << RESET << ": Away with thee!" << std::endl;
-	std::cout << BRED << "[" << _name << " destroyed]" << RESET << std::endl << std::endl;
+	// std::cout << PURPLE << _name << RESET << ": Away with thee!" << std::endl;
+	// std::cout << BRED << "[" << _name << " destroyed]" << RESET << std::endl << std::endl;
+	DESTRUCTOR("ScavTrap")
 }
 
 void ScavTrap::guardGate(){

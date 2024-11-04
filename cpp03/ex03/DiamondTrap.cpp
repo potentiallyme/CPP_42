@@ -1,15 +1,17 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("dTrap_clap_name"), ScavTrap(), FragTrap(), _name("dTrap")
-{
+DiamondTrap::DiamondTrap() : ClapTrap("dTrap_clap_name"), ScavTrap("dTrap_clap_name"), FragTrap("dTrap_clap_name")
+{	
+	_name = "dTrap";
 	_hp = FragTrap::_hp;
 	_mana = ScavTrap::_mana;
 	_ad = FragTrap::_ad;
 	CONSTRUCTOR("DiamondTrap")
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
 {
+	_name = name;
 	_hp = FragTrap::_hp;
 	_mana = ScavTrap::_mana;
 	_ad = FragTrap::_ad;
@@ -18,6 +20,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
+	_name = other._name + "_copy";
 	COPY("DiamondTrap")
 }
 
@@ -28,8 +31,10 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap & DiamondTrap::operator=(const DiamondTrap &other)
 {
-	if (this != &other)
+	if (this != &other){
 		ClapTrap::operator=(other);
+		_name = other._name + "_clone";
+	}
 	return *this;
 }
 
@@ -38,7 +43,16 @@ void DiamondTrap::attack(const std::string &target)
 	ScavTrap::attack(target);
 }
 
+void DiamondTrap::takeDamage(unsigned int amount){
+	FragTrap::takeDamage(amount);
+}
+
+void DiamondTrap::beRepaired(unsigned int amount){
+	ScavTrap::beRepaired(amount);
+}
+
 void DiamondTrap::whoAmI()
 {
-	std::cout << "I am named " << _name << " in my updated version, but I once was " << ClapTrap::_name << std::endl;
+	std::cout << PURPLE << _name << ": " << RESET;
+	std::cout << "I am named " << this->_name << " in my updated version, but I once was " << ClapTrap::_name << std::endl << std::endl;
 }

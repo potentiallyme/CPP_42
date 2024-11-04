@@ -5,13 +5,13 @@
 
 // Class macros
 #define CONSTRUCTOR(class_name) \
-    std::cout<<BLUE<<"Default constructor called for class "<<PURPLE<<class_name<<std::endl;
+    std::cout<<PURPLE<<class_name<<GREEN<<" Default Constructor called"<<RESET<<std::endl;
 #define DESTRUCTOR(class_name) \
-    std::cout<<RED<<"Destructor called for class "<<PURPLE<<class_name<<std::endl;
+    std::cout<<PURPLE<<class_name<<RED<<" Destructor called"<<RESET<<std::endl;
 #define COPY(class_name) \
-    std::cout<<YELLOW<<"Copy constructor called for class "<<PURPLE<<class_name<<std::endl;
+    std::cout<<PURPLE<<class_name<<YELLOW<<" Copy Constructor called"<<RESET<<std::endl;
 #define PARAMETER(class_name) \
-    std::cout<<BLUE<<"Parameterized constructor called for class "<<PURPLE<<class_name<<std::endl;
+    std::cout<<PURPLE<<class_name<<GREEN<<" Parameterized Constructor called"<<RESET<<std::endl;
 
 
 //Base colors
