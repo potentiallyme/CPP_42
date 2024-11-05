@@ -47,15 +47,15 @@ $(OBJ_DIR)/%.o: %.cpp
 
 $(NAME): $(OBJ)
 	$(GPP) $(OBJ) $(FLAGS) -o $(NAME)
-	@printf "                                                                    \r$(GREEN)compilationWasSuccessful$(RESET)\n"
+	@printf "                                                                    \r$(GREEN)compilationWasSuccessful$(RESET)\n\n"
 
 clean:
 	$(RM) $(NAME)
-	@printf "\r\n\r$(GREEN)cleaned\n$(RESET)"
+	@printf "\r\n\r$(GREEN)cleaned\n\n$(RESET)"
 
 fclean:
 	$(RM) $(OBJ_DIR) $(NAME)
-	@printf "\r\n\r$(RED)fullyCleaned\n$(RESET)"
+	@printf "\r\n\r$(RED)fullyCleaned\n\n$(RESET)"
 
 re: fclean $(NAME)
 

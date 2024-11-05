@@ -5,13 +5,19 @@
 
 // Class macros
 #define CONSTRUCTOR(class_name) \
-    std::cout<<PURPLE<<class_name<<GREEN<<" Default Constructor called"<<RESET<<std::endl;
+    std::cout<<PURPLE<<class_name<<GREEN<<" Default Constructor called"<<std::endl;
 #define DESTRUCTOR(class_name) \
-    std::cout<<PURPLE<<class_name<<RED<<" Destructor called"<<RESET<<std::endl;
+    std::cout<<PURPLE<<class_name<<RED<<" Destructor called"<<std::endl;
 #define COPY(class_name) \
-    std::cout<<PURPLE<<class_name<<YELLOW<<" Copy Constructor called"<<RESET<<std::endl;
+    std::cout<<PURPLE<<class_name<<YELLOW<<" Copy Constructor called"<<std::endl;
 #define PARAMETER(class_name) \
-    std::cout<<PURPLE<<class_name<<GREEN<<" Parameterized Constructor called"<<RESET<<std::endl;
+    std::cout<<PURPLE<<class_name<<GREEN<<" Parameterized Constructor called"<<std::endl;
+
+// Main Test macros
+#define CONSTRUCT std::cout<<BGREEN<<"### CONSTRUCTORS ###"<<RESET<<std::endl;
+#define TESTS std::cout<<BBLUE<<"### TESTS ###"<<RESET<<std::endl;
+#define DESTRUCT std::cout<<BRED<<"### DESTRUCTORS ###"<<RESET<<std::endl;
+#define NEWLINE std::cout<<std::endl;
 
 
 //Base colors

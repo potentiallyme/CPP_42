@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &other){
 	if (this != &other){
-		this->_name = other._name + "Clone";
+		this->_name = other._name + " Clone";
 		this->_ad = other._ad;
 		this->_mana = other._mana;
 		this->_hp = other._hp;
@@ -39,19 +39,32 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &other){
 }
 
 void ClapTrap::attack(const std::string& target){
+
 	if (_name.empty())
 		std::cout << PURPLE << "Default ClapTrap: ";
 	else
-		std::cout << PURPLE << "ClapTrap " << _name << ": ";
-	std::cout << RESET << "Heyyah!" << std::endl << BLUE;
+		std::cout << PURPLE << "ClapTrap " << _name << ": ";	
+	if (_hp <= 0){
+		std::cout << RESET << "I'm dead... I'm DEAD YOU FOOL!" << RESET << std::endl;
+		std::cout << BLUE << "[This ClapTrap is dead and cannot do aynthing until healed]" << std::endl << std::endl;
+		return;
+	}
+	if (_mana <= 0)
+		std::cout << RESET << "I have no energy left!" << std::endl << RED;
+	else
+		std::cout << RESET << "Heyyah!" << std::endl << BLUE;
 	if (_name.empty())
 		std::cout << "[Default ClapTrap";
 	else
 		std::cout << "[ClapTrap " << _name;
-	std::cout << " dealt " << _ad << " damage to " << target << "]" << std::endl;
-	std::cout << "[MANA (" << _mana << ") ==> (";
-	_mana -= 1;
-	std::cout << _mana << ")]" << RESET << std::endl << std::endl;
+	if (_mana <= 0)
+		std::cout << " has no more energy to attack]" << RESET << std::endl << std::endl;
+	else{
+		std::cout << " dealt " << _ad << " damage to " << target << "]" << std::endl;
+		std::cout << "[MANA (" << _mana << ") ==> (";
+		_mana -= 1;
+		std::cout << _mana << ")]" << RESET << std::endl << std::endl;
+	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
@@ -62,7 +75,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 		std::cout << PURPLE << "ClapTrap " << _name << ": ";
 	if (_hp <= 0){
 		std::cout << RESET << "I'M DEAD I'M DEAD OHMYGOD I'M ALREADY DEAD!" << RESET << std::endl;
-		std::cout << BLUE << "[This ClapTrap is dead and cannot take more damage until healed]" << std::endl;
+		std::cout << BLUE << "[This ClapTrap is dead and cannot take more damage until healed]" << std::endl << std::endl;
 		return;
 	}
 	std::cout << RESET << "Ow hohoho, that hurts! Yipes!" << std::endl << BLUE;
@@ -82,7 +95,9 @@ void ClapTrap::beRepaired(unsigned int amount){
 		std::cout << PURPLE << "Default ClapTrap: ";
 	else
 		std::cout << PURPLE << "ClapTrap " << _name << ": ";
-	if (_hp == 0)
+	if (_mana <= 0)
+		std::cout << RESET << "I have no energy left!" << std::endl << RED;
+	else if (_hp == 0)
 		std::cout << RESET << "Are you god? Am I dead?" << std::endl << BLUE;
 	else
 		std::cout << RESET << "Health! Ooo, what flavor is red?" << std::endl << BLUE;
@@ -90,6 +105,10 @@ void ClapTrap::beRepaired(unsigned int amount){
 		std::cout << "[Default ClapTrap";
 	else
 		std::cout << "[ClapTrap " << _name;
+	if (_mana <= 0){
+		std::cout << " has no energy to repair themselves]" << RESET << std::endl << std::endl;
+		return ;
+	}
 	std::cout << " healed for " << amount << " health]" << std::endl;
 	std::cout << "[HP (" << _hp << ") ==> (";
 	_hp += amount;

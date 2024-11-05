@@ -1,21 +1,47 @@
 #include "ScavTrap.hpp"
 
 int main(void){
-	ScavTrap scavTrap1;
-	ScavTrap scavTrap2(scavTrap1);
-	ScavTrap scavTrap3("John");
-	scavTrap3 = scavTrap2;
+	std::cout << BYELLOW << "\n\n||--> TESTING CLAPTRAP <--||\n" << RESET << std::endl;
+	{
+		CONSTRUCT
+		ClapTrap a;
+		ClapTrap b("Bob");
 
-	scavTrap1.attack("scavTrap2");
-	scavTrap2.takeDamage(5);
-	scavTrap1.attack("scavTrap3");
-	scavTrap3.takeDamage(11);
-	scavTrap3.takeDamage(1);
-	scavTrap2.beRepaired(5);
-	scavTrap1.guardGate();
-	scavTrap1.guardGate();
+		TESTS
+		a.attack("some other robot");
+		a.takeDamage(10);
+		a.takeDamage(10);
+		a.beRepaired(5);
+		a.attack("some other other robot");
+		b.beRepaired(3);
+		for (int i = 0; i < 12; i++)
+			b.attack("Tim");
+		b.beRepaired(3);
+		DESTRUCT	
+}
+	std::cout << BYELLOW << "\n\n||--> TESTING SCAVTRAP <--||\n" << RESET << std::endl;
+	{
+		CONSTRUCT
+		ScavTrap a;
+		ScavTrap b("Bob");
 
-	scavTrap1.printStats();
-	scavTrap2.printStats();
-	scavTrap3.printStats();
+		TESTS
+		a.attack("CloneTrap");
+		// for (int i = 0; i < 50; i++)
+		// 	a.attack("CloneTrap");
+		a.beRepaired(22);
+		a.takeDamage(21);
+		a.beRepaired(22);
+		a.guardGate();
+		a.guardGate();
+		b.attack("Tim");
+		b.takeDamage(101);
+		b.takeDamage(15);
+		b.attack("Fake");
+
+		a.printStats();
+		b.printStats();
+		DESTRUCT
+	}
+	return 0;
 }

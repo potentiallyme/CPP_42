@@ -30,7 +30,7 @@ FragTrap& FragTrap::operator=(FragTrap const &other){
 
 FragTrap::~FragTrap(){
 	std::cout << PURPLE << _name << ": " << RESET << "Away with thee!" << std::endl;
-	std::cout << BRED << "[" << _name << " destroyed]" << RESET << std::endl << std::endl;
+	std::cout << BRED << "[" << _name << " destroyed]" << RESET << std::endl;
 }
 
 void FragTrap::highFiveGuys(){

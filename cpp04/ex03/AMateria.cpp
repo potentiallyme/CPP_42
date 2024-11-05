@@ -9,6 +9,7 @@ AMateria::AMateria(const std::string &type):_type(type){
 }
 
 AMateria::AMateria(const AMateria &other){
+	_type = other._type;
 	COPY("AMateria")
 }
 
@@ -22,9 +23,9 @@ AMateria::~AMateria(){
 // }
 
 std::string &AMateria::getType(){
-	return this->_type;
+	return _type;
 }
 
 void AMateria::use(ICharacter &target){
-	std::cout << BLUE << "AMateria used on target " << PURPLE << target << RESET << std::endl;
+	std::cout << BLUE << "AMateria used on target " << PURPLE << target.getName() << RESET << std::endl;
 }

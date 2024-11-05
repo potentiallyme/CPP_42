@@ -1,8 +1,8 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap("dTrap_clap_name"), ScavTrap("dTrap_clap_name"), FragTrap("dTrap_clap_name")
+DiamondTrap::DiamondTrap() : ClapTrap("Caoimhe_clap_name"), ScavTrap("Caoimhe_clap_name"), FragTrap("Caoimhe_clap_name")
 {	
-	_name = "dTrap";
+	_name = "Caoimhe";
 	_hp = FragTrap::_hp;
 	_mana = ScavTrap::_mana;
 	_ad = FragTrap::_ad;

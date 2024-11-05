@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include "Macros.hpp"
+#include "AMateria.hpp"
 
-class Cure
+class Cure : public AMateria
 {
 	public:
 		// * Constructors
@@ -19,9 +20,11 @@ class Cure
 		Cure & operator=(const Cure &);
 		
 		// * Getters / Setters
-
+		std::string &getType();
+		void use(ICharacter &);
+		Cure *clone();
 	private:
-		
+		std::string _type;
 };
 
 #endif

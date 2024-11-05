@@ -2,13 +2,13 @@
 
 int main()
 {
-	std::cout << BYELLOW << "### TESTING CLAPTRAP ###\n" << RESET << std::endl;
+	std::cout << BYELLOW << "\n\n||--> TESTING CLAPTRAP <--||\n" << RESET << std::endl;
 	{
-		std::cout << GREEN << "# Constructing #" << RESET << std::endl;
+		CONSTRUCT
 		ClapTrap a;
-		ClapTrap b("Cody");
+		ClapTrap b("Bob");
 
-		std::cout << BLUE << std::endl << "# Testing #" << RESET << std::endl;
+		TESTS
 		a.attack("some other robot");
 		a.takeDamage(10);
 		a.takeDamage(10);
@@ -16,17 +16,17 @@ int main()
 		a.attack("some other other robot");
 		b.beRepaired(3);
 		for (int i = 0; i < 12; i++)
-			b.attack("Cody-clone");
+			b.attack("Tim");
 		b.beRepaired(3);
-		std::cout << RED << "# Deconstructing #" << RESET << std::endl;
-	}
-	std::cout << BYELLOW << "\n\n### TESTING SCAVTRAP ###\n" << RESET << std::endl;
+		DESTRUCT	
+}
+	std::cout << BYELLOW << "\n\n||--> TESTING SCAVTRAP <--||\n" << RESET << std::endl;
 	{
-		std::cout << GREEN << "# Constructing #" << RESET << std::endl;
+		CONSTRUCT
 		ScavTrap a;
-		ScavTrap b("Savage");
+		ScavTrap b("Bob");
 
-		std::cout << BLUE << "# Testing #" << RESET << std::endl;
+		TESTS
 		a.attack("CloneTrap");
 		// for (int i = 0; i < 50; i++)
 		// 	a.attack("CloneTrap");
@@ -35,43 +35,41 @@ int main()
 		a.beRepaired(22);
 		a.guardGate();
 		a.guardGate();
-		b.attack("Savage-clone");
+		b.attack("Tim");
 		b.takeDamage(101);
 		b.takeDamage(15);
-		b.attack("ScavTrap-clone");
-		std::cout << RED << "# Deconstructing #" << RESET << std::endl;
+		b.attack("Fake");
+		DESTRUCT
 	}
-	std::cout << BYELLOW << "\n\n### TESTING FRAGTRAP ###\n" << RESET << std::endl;
+	std::cout << BYELLOW << "\n\n||--> TESTING FRAGTRAP <--||\n" << RESET << std::endl;
 	{
-		std::cout << GREEN << "# Constructing #" << RESET << std::endl;
+		CONSTRUCT
 		FragTrap a;
-		FragTrap b("Chadd");
+		FragTrap b("Bob");
 
-		std::cout << BLUE << "# Testing #" << RESET << std::endl;
+		TESTS
 		a.highFiveGuys();
-		a.attack("some random dude");
+		a.attack("some random bot");
 		a.takeDamage(101);
 		a.takeDamage(1);
-		a.attack("some random dude");
+		a.attack("some random bot");
 		b.highFiveGuys();
-		// for(int i = 0; i < 101; i++)
-		// 	b.attack("FragTrap-clone");
-		std::cout << RED << "# Deconstructing #" << RESET << std::endl;
+		DESTRUCT
 	}
-	std::cout << BYELLOW << "\n\n### TESTING DIAMONDTRAP ###\n" << RESET << std::endl;
+	std::cout << BYELLOW << "\n\n||--> TESTING DIAMONDTRAP <--||\n" << RESET << std::endl;
 	{
-		std::cout << GREEN << "# Constructing #" << RESET << std::endl;
+		CONSTRUCT
 		DiamondTrap a;
-		DiamondTrap b("Giga Chadd");
+		DiamondTrap b("Bob");
 		DiamondTrap c(a);
 
-		std::cout << BLUE << "# Testing #" << RESET << std::endl;
+		TESTS
 		a.whoAmI();
-		a.attack("some super random dude");
+		a.attack("some super random bot");
 		b.whoAmI();
-		b.attack("Chadd-clone");
+		b.attack("Tim");
 		c.whoAmI();
-		std::cout << RED << "# Deconstructing #" << RESET << std::endl;
+		DESTRUCT
 	}
 	return (0);
 }

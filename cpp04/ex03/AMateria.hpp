@@ -22,7 +22,7 @@ class AMateria
 		
 		// * Getters / Setters
 		virtual std::string &getType();
-		virtual AMateria *clone();
+		virtual AMateria *clone() = 0;
 		virtual void use(ICharacter &);
 	protected:
 		std::string _type;

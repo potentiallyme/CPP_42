@@ -8,20 +8,12 @@
 class IMateriaSource
 {
 	public:
-		// * Constructors
-		IMateriaSource();
-		IMateriaSource(const IMateriaSource &);
-
 		// * Destructor
-		~IMateriaSource();
+		virtual ~IMateriaSource();
 
-		// * Operator(s)
-		IMateriaSource & operator=(const IMateriaSource &);
-		
 		// * Getters / Setters
-
-	private:
-		
+		virtual void learnMateria(AMateria *) = 0;
+		virtual AMateria *createMateria(std::string &type) = 0;
 };
 
 #endif

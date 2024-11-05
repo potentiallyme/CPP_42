@@ -12,6 +12,10 @@
     std::cout<<PURPLE<<class_name<<YELLOW<<" Copy Constructor called"<<std::endl;
 #define PARAMETER(class_name) \
     std::cout<<PURPLE<<class_name<<GREEN<<" Parameterized Constructor called"<<std::endl;
+#define NAMEOK(sentence) \
+    std::cout<<PURPLE<<_name<<BLUE<<" "<<sentence<<RESET<<std::endl;
+#define NAMEKO(sentence) \
+    std::cout<<PURPLE<<_name<<RED<<" "<<sentence<<RESET<<std::endl;
 
 // Main Test macros
 #define CONSTRUCT std::cout<<BGREEN<<"### CONSTRUCTORS ###"<<RESET<<std::endl;

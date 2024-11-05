@@ -1,19 +1,26 @@
 #include "ClapTrap.hpp"
 
 int main(void){
-	ClapTrap clapTrap1;
-	ClapTrap clapTrap2(clapTrap1);
-	ClapTrap clapTrap3("John");
-	clapTrap3 = clapTrap2;
+	std::cout << BYELLOW << "\n\n||--> TESTING CLAPTRAP <--||\n" << RESET << std::endl;
+	{
+		CONSTRUCT
+		ClapTrap a;
+		ClapTrap b("Bob");
 
-	clapTrap1.attack("clapTrap2");
-	clapTrap2.takeDamage(5);
-	clapTrap1.attack("clapTrap3");
-	clapTrap3.takeDamage(11);
-	clapTrap3.takeDamage(1);
-	clapTrap2.beRepaired(5);
+		TESTS
+		a.attack("some other robot");
+		a.takeDamage(10);
+		a.takeDamage(10);
+		a.beRepaired(5);
+		a.attack("some other other robot");
+		b.beRepaired(3);
+		for (int i = 0; i < 12; i++)
+			b.attack("Tim");
+		b.beRepaired(3);
 
-	clapTrap1.printStats();
-	clapTrap2.printStats();
-	clapTrap3.printStats();
+		a.printStats();
+		b.printStats();
+		DESTRUCT	
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 #include "Macros.hpp"
 #include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	public:
 		// * Constructors
@@ -29,7 +29,8 @@ class Character
 		void use(int, ICharacter &);
 		AMateria *getMateria(int);
 	private:
-		
+		std::string _name;
+		AMateria *(_inventory[4]);
 };
 
 #endif

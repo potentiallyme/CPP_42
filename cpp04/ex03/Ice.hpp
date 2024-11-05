@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include "Macros.hpp"
+#include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 	public:
 		// * Constructors
@@ -19,9 +20,11 @@ class Ice
 		Ice & operator=(const Ice &);
 		
 		// * Getters / Setters
-
+		std::string &getType();
+		void use(ICharacter &);
+		Ice *clone();
 	private:
-		
+		std::string _type;
 };
 
 #endif

@@ -42,7 +42,7 @@ ScavTrap::~ScavTrap(){
 void ScavTrap::guardGate(){
 	if (_gK == false){
 		std::cout << PURPLE << _name << ": " << BRED << "GATE KEEPER MODE ACTIVATED." << std::endl;
-		std::cout << BLUE << "[" << _name << " has enteBRED Gate Keeper Mode]" << RESET << std::endl << std::endl;
+		std::cout << BBLUE << "[" << _name << " has entered Gate Keeper Mode]" << RESET << std::endl << std::endl;
 		_gK = true;
 	}
 	else{

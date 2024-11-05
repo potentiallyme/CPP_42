@@ -2,30 +2,62 @@
 #include "ScavTrap.hpp"
 
 int main(void){
-	ScavTrap scavTrap1("Rob");
-	ScavTrap scavTrap2(scavTrap1);
-	std::cout << std::endl;
-	FragTrap fragTrap1("Hank");
-	FragTrap fragTrap2;
+	std::cout << BYELLOW << "\n\n||--> TESTING CLAPTRAP <--||\n" << RESET << std::endl;
+	{
+		CONSTRUCT
+		ClapTrap a;
+		ClapTrap b("Bob");
 
-	scavTrap1.attack("scavTrap2");
-	scavTrap2.takeDamage(20);
-	scavTrap1.attack("fragTrap1");
-	fragTrap1.takeDamage(20);
-	fragTrap1.takeDamage(20);
-	fragTrap1.takeDamage(20);
-	fragTrap1.takeDamage(20);
-	fragTrap1.takeDamage(20);
-	fragTrap1.takeDamage(20);
+		TESTS
+		a.attack("some other robot");
+		a.takeDamage(10);
+		a.takeDamage(10);
+		a.beRepaired(5);
+		a.attack("some other other robot");
+		b.beRepaired(3);
+		for (int i = 0; i < 12; i++)
+			b.attack("Tim");
+		b.beRepaired(3);
+		DESTRUCT	
+}
+	std::cout << BYELLOW << "\n\n||--> TESTING SCAVTRAP <--||\n" << RESET << std::endl;
+	{
+		CONSTRUCT
+		ScavTrap a;
+		ScavTrap b("Bob");
 
-	fragTrap2 = fragTrap1;
-	fragTrap2.attack("himself?");
-	fragTrap2.takeDamage(30);
-	scavTrap2.beRepaired(15);
-	fragTrap2.highFiveGuys();
+		TESTS
+		a.attack("CloneTrap");
+		// for (int i = 0; i < 50; i++)
+		// 	a.attack("CloneTrap");
+		a.beRepaired(22);
+		a.takeDamage(21);
+		a.beRepaired(22);
+		a.guardGate();
+		a.guardGate();
+		b.attack("Tim");
+		b.takeDamage(101);
+		b.takeDamage(15);
+		b.attack("Fake");
+		DESTRUCT
+	}
+	std::cout << BYELLOW << "\n\n||--> TESTING FRAGTRAP <--||\n" << RESET << std::endl;
+	{
+		CONSTRUCT
+		FragTrap a;
+		FragTrap b("Bob");
 
-	scavTrap1.printStats();
-	scavTrap2.printStats();
-	fragTrap1.printStats();
-	fragTrap2.printStats();
+		TESTS
+		a.highFiveGuys();
+		a.attack("some random bot");
+		a.takeDamage(101);
+		a.takeDamage(1);
+		a.attack("some random bot");
+		b.highFiveGuys();
+
+		a.printStats();
+		b.printStats();
+		DESTRUCT
+	}
+	return (0);
 }
