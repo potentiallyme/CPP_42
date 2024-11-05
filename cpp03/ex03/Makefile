@@ -41,7 +41,7 @@ $(OBJ_DIR)/%.o: %.cpp
 	@if [ "$(CMP)" -eq 1 ]; then \
 		printf "\n"; \
 	fi
-	@printf "\r$(FAINT)$(SPINK)compiling$(RESET)$(GREEN)$<$(BLUE) [$(SPINK)$(CMP)$(BLUE)/$(SPINK)$(FILE)$(BLUE)]$(RESET)                       \r"
+	@printf "\r$(FAINT)$(SPINK)Compiling $(RESET)$(GREEN)$<$(BLUE) [$(SPINK)$(CMP)$(BLUE)/$(SPINK)$(FILE)$(BLUE)]$(RESET)                       \r"
 	$(GPP) $(FLAGS) -c $< -o $@
 	@$(eval CMP=$(shell echo $$(($(CMP)+1))))
 

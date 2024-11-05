@@ -1,6 +1,6 @@
 #********************************************************************#
 
-NAME = foo
+NAME 	= Animal
 GPP		= @g++
 FLAGS	= -Wall -Werror -Wextra -std=c++98 -pedantic
 MK		= @mkdir -p
@@ -9,7 +9,7 @@ FILE	= $(shell ls -lR | grep -F .cpp | wc -l)
 CMP		= 1
 CLEAR 	= @clear
 
-SOURCES := main.cpp
+SOURCES := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 OBJ_DIR := .objs
 OBJ		:= $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))
 
