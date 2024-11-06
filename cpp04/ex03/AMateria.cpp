@@ -27,5 +27,5 @@ std::string &AMateria::getType(){
 }
 
 void AMateria::use(ICharacter &target){
-	std::cout << BLUE << "AMateria used on target " << PURPLE << target.getName() << RESET << std::endl;
+	std::cout << BLUE << " AMateria used on target " << PURPLE << target.getName() << RESET << std::endl;
 }

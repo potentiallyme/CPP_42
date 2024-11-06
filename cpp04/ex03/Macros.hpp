@@ -22,6 +22,8 @@
 #define TESTS std::cout<<BBLUE<<"### TESTS ###"<<RESET<<std::endl;
 #define DESTRUCT std::cout<<BRED<<"### DESTRUCTORS ###"<<RESET<<std::endl;
 #define NEWLINE std::cout<<std::endl;
+#define STACK std::cout<<YELLOW<<"# ON STACK #"<<RESET<<std::endl;
+#define HEAP std::cout<<YELLOW<<"# ON HEAP #"<<RESET<<std::endl;
 
 
 //Base colors

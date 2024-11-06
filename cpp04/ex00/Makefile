@@ -1,7 +1,7 @@
 #********************************************************************#
 
 NAME 	= Animal
-GPP		= @g++
+GPP		= @c++
 FLAGS	= -Wall -Werror -Wextra -std=c++98 -pedantic
 MK		= @mkdir -p
 RM 		= @rm -rf

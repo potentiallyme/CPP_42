@@ -6,9 +6,14 @@
 #include "Macros.hpp"
 #include "AMateria.hpp"
 
+class AMateria;
+
 class ICharacter
 {
 	public:
+		// * Constructors
+		// ICharacter();
+		// ICharacter(const ICharacter &);
 		// * Destructor
 		virtual ~ICharacter(){};
 

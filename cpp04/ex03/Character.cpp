@@ -17,7 +17,8 @@ Character::Character(std::string name){
 Character::Character(const Character &other){
 	_name = other._name;
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = other._inventory[i];
+		if (_inventory[i])
+			_inventory[i] = other._inventory[i]->clone();
 	COPY("Character")
 }
 
@@ -45,7 +46,7 @@ void Character::equip(AMateria *m){
 		NAMEKO("can't equip a non-existant object")
 		return;
 	}
-	for (int i = 0; i < 5; i++){
+	for (int i = 0; i < 4; i++){
 		if (_inventory[i] == 0){
 			_inventory[i] = m;
 			NAMEOK("equipped the Materia")
@@ -53,14 +54,12 @@ void Character::equip(AMateria *m){
 		}
 	}
 	NAMEKO("can't hold more than 4 Materias")
-
 }
 
 void Character::unequip(int index){
 	if ((index < 0 || index > 3) || _inventory[index] == 0)
 		NAMEKO("can't unequip something it doesn't have")
 	else{
-		AMateria *p = _inventory[index];
 		_inventory[index] = 0;
 		NAMEOK("unequipped the Materia")
 	}
@@ -70,7 +69,7 @@ void Character::use(int index, ICharacter &target){
 	if ((index < 0 || index > 3) || _inventory[index] == 0)
 		NAMEKO("doesn't have anything to use at the given slot")
 	else{
-		std::cout << _name;
+		std::cout << PURPLE << _name;
 		(_inventory[index])->use(target);
 		NAMEOK("has equipped the Materia")
 	}

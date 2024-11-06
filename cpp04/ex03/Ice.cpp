@@ -29,6 +29,6 @@ Ice *Ice::clone(){
 }
 
 void Ice::use(ICharacter &target){
-	std::cout << BLUE << " heals " << PURPLE << "\'s wounds" << RESET << std::endl;
+	std::cout << BLUE << " * shoots an ice bolt at " << PURPLE << target.getName() << " *" << RESET << std::endl;
 }
 

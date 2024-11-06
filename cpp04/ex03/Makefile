@@ -1,6 +1,6 @@
 #********************************************************************#
 
-NAME 	= Farm
+NAME 	= Materia
 GPP		= @c++
 FLAGS	= -Wall -Werror -Wextra -std=c++98 -pedantic
 MK		= @mkdir -p
@@ -9,7 +9,7 @@ FILE	= $(shell ls -lR | grep -F .cpp | wc -l)
 CMP		= 1
 CLEAR 	= @clear
 
-SOURCES := main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SOURCES := main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJ_DIR := .objs
 OBJ		:= $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))
 
