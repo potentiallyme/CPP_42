@@ -9,6 +9,7 @@ MateriaSource::MateriaSource(){
 
 MateriaSource::MateriaSource(MateriaSource const &other){
 	for (int i = 0; i < 4; i++){
+		_inventory[i] = 0;
 		if (other._inventory[i])
 			this->_inventory[i] = (other._inventory[i])->clone();
 	}
@@ -17,8 +18,10 @@ MateriaSource::MateriaSource(MateriaSource const &other){
 
 MateriaSource & MateriaSource::operator=(MateriaSource const &other){
 	for(int i = 0; i < 4; i++){
-		if (_inventory[i])
+		if (_inventory[i]){
 			delete _inventory[i];
+			_inventory[i] = 0;
+		}
 		if (other._inventory[i])
 			_inventory[i] = (other._inventory[i])->clone();
 	}
@@ -27,8 +30,11 @@ MateriaSource & MateriaSource::operator=(MateriaSource const &other){
 
 MateriaSource::~MateriaSource(){
 	for (int i = 0; i < 4; i++){
-		if (_inventory[i])
+		if (_inventory[i] != 0){
+			std::cout << RED << "Deleting Materia of type " << PURPLE << _inventory[i]->getType() << RESET << std::endl;
 			delete _inventory[i];
+			_inventory[i] = 0;
+		}
 	}
 	DESTRUCTOR("MateriaSource")
 }
@@ -39,7 +45,7 @@ void MateriaSource::learnMateria(AMateria *m){
 	}
 	for (int i = 0; i < 4; i++){
 		if (_inventory[i] == 0){
-			_inventory[i] = m;
+			_inventory[i] = m->clone();
 			std::cout << BLUE << "Materia " << m->getType() << " has been learned" << RESET << std::endl;
 			return;
 		}

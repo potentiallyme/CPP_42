@@ -22,7 +22,7 @@ AMateria::~AMateria(){
 // 	return *this;
 // }
 
-std::string &AMateria::getType(){
+std::string const &AMateria::getType() const{
 	return _type;
 }
 

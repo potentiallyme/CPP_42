@@ -1,8 +1,8 @@
 #include "Ice.hpp"
 
 Ice::Ice(){
-	_type = "Ice";
-	CONSTRUCTOR("ice")
+	_type = "ice";
+	CONSTRUCTOR("Ice")
 }
 
 Ice::Ice(const Ice &other){
@@ -19,16 +19,16 @@ Ice & Ice::operator=(const Ice &other){
 	return *this;
 }
 
-std::string &Ice::getType(){
+std::string const &Ice::getType() const{
 	return _type;
 }
 
-Ice *Ice::clone(){
+Ice *Ice::clone() const{
 	Ice *copy = new Ice;
 	return copy;
 }
 
 void Ice::use(ICharacter &target){
-	std::cout << BLUE << " * shoots an ice bolt at " << PURPLE << target.getName() << " *" << RESET << std::endl;
+	std::cout << BLUE << " * shoots an ice bolt at " << PURPLE << target.getName() << BLUE << " *" << RESET << std::endl;
 }
 

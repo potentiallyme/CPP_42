@@ -20,9 +20,9 @@ class Cure : public AMateria
 		Cure & operator=(const Cure &);
 		
 		// * Getters / Setters
-		std::string &getType();
+		std::string const &getType() const;
 		void use(ICharacter &);
-		Cure *clone();
+		Cure *clone() const;
 	private:
 		std::string _type;
 };

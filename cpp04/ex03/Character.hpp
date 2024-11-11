@@ -21,7 +21,7 @@ class Character : public ICharacter
 		Character & operator=(const Character &);
 		
 		// * Getters / Setters
-		std::string &getName();
+		std::string const &getName() const;
 
 		// * MEMBERS
 		void equip(AMateria *);

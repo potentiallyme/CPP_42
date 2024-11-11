@@ -19,11 +19,11 @@ Cure & Cure::operator=(const Cure &other){
 	return *this;
 }
 
-std::string &Cure::getType(){
+std::string const &Cure::getType() const{
 	return _type;
 }
 
-Cure *Cure::clone(){
+Cure *Cure::clone() const{
 	Cure *copy = new Cure;
 	return copy;
 }

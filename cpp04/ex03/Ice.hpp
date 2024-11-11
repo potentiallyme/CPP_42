@@ -20,9 +20,9 @@ class Ice : public AMateria
 		Ice & operator=(const Ice &);
 		
 		// * Getters / Setters
-		std::string &getType();
+		std::string const &getType() const;
 		void use(ICharacter &);
-		Ice *clone();
+		Ice *clone() const;
 	private:
 		std::string _type;
 };

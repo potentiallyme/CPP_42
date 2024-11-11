@@ -16,16 +16,21 @@ Character::Character(std::string name){
 
 Character::Character(const Character &other){
 	_name = other._name;
-	for (int i = 0; i < 4; i++)
-		if (_inventory[i])
+	for (int i = 0; i < 4; i++){
+		_inventory[i] = 0;
+		if (other._inventory[i] != 0)
 			_inventory[i] = other._inventory[i]->clone();
+	}
 	COPY("Character")
 }
 
 Character::~Character(){
 	for (int i = 0; i < 4; i++){
-		if (_inventory[i])
+		if (_inventory[i] != 0 && _inventory[i]){
+			std::cout << RED << "Deleting Materia of type " << PURPLE << _inventory[i]->getType() << RESET << std::endl;
 			delete _inventory[i];
+			_inventory[i] = 0;
+		}
 	}
 	DESTRUCTOR("Character")
 }
@@ -33,8 +38,10 @@ Character::~Character(){
 Character & Character::operator=(const Character &other){
 	_name = other._name;
 	for (int i = 0; i < 4; i++){
-		if (_inventory[i])
+		if (_inventory[i]){
 			delete _inventory[i];
+			_inventory[i] = 0;
+		}
 		if (other._inventory[i])
 			_inventory[i] = other._inventory[i]->clone();
 	}
@@ -48,7 +55,7 @@ void Character::equip(AMateria *m){
 	}
 	for (int i = 0; i < 4; i++){
 		if (_inventory[i] == 0){
-			_inventory[i] = m;
+			_inventory[i] = m->clone();
 			NAMEOK("equipped the Materia")
 			return;
 		}
@@ -71,11 +78,10 @@ void Character::use(int index, ICharacter &target){
 	else{
 		std::cout << PURPLE << _name;
 		(_inventory[index])->use(target);
-		NAMEOK("has equipped the Materia")
 	}
 }
 
-std::string &Character::getName(){
+std::string const &Character::getName() const{
 	return _name;
 }
 

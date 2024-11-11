@@ -23,7 +23,7 @@ class Animal
 		void setType(std::string &);
 
 		// * Members
-		virtual void makeSound() = 0;
+		virtual void makeSound() const = 0;
 
 	protected:
 		std::string type;
