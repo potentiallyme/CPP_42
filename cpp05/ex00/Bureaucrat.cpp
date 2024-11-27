@@ -6,8 +6,10 @@ Bureaucrat::Bureaucrat():_name("Basic Bureaucrat"),_grade(1){
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name),_grade(grade){
-  if (_grade < 1 || _grade > 150)
-    throw WrongGrade();
+  if (_grade < 1)
+    throw GradeTooLowException();
+  if (_grade > 150)
+    throw GradeTooHighException();
   PARAMETER("Bureaucrat")
 }
 
@@ -24,10 +26,15 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
   return *this;
 }
 
-std::string Bureaucrat::getName(){
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj){
+  os << YELLOW << obj.getName() << ": " << RESET << obj.getGrade() << std::endl;
+  return os;
+}
+
+const std::string &Bureaucrat::getName() const{
   return _name;
 }
 
-int Bureaucrat::getGrade(){
+int Bureaucrat::getGrade() const{
   return _grade;
 }
