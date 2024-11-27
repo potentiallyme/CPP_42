@@ -7,6 +7,7 @@ int main(void){
     Form f1("Marriage certificate", 80);
     std::cout << b1 << f1;
     f1.beSigned(b1);
+    std::cout << f1;
   }
   catch(std::exception &e){
     std::cout << RED << e.what() << RESET << std::endl;
@@ -18,6 +19,7 @@ int main(void){
     Form f2("Construction permit", 40);
     std::cout << b2 << f2;
     f2.beSigned(b2);
+    std::cout << f2;
   }
   catch(std::exception &e){
     std::cout << RED << e.what() << RESET << std::endl;
@@ -29,6 +31,7 @@ int main(void){
     Form f3("Financial loan", -1);
     std::cout << b3 << f3;
     f3.beSigned(b3);
+    std::cout << f3;
   }
   catch(std::exception &e){
     std::cout << RED << e.what() << RESET << std::endl;
@@ -40,6 +43,7 @@ int main(void){
     Form f4("Presidential decree", 1);
     std::cout << b4 << f4;
     f4.beSigned(b4);
+    std::cout << f4;
   }
   catch(std::exception &e){
     std::cout << RED << e.what() << RESET << std::endl;
@@ -51,6 +55,7 @@ int main(void){
     Form f5("Big Boss document", 1);
     std::cout << b5 << f5;
     f5.beSigned(b5);
+    std::cout << f5;
   }
   catch(std::exception &e){
     std::cout << RED << e.what() << RESET << std::endl;

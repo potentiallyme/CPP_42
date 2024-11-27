@@ -1,11 +1,11 @@
 #include "Form.hpp"
 #include "WrongGrade.hpp"
 
-Form::Form():_name("Basic Form"),_gradeSign(1),_gradeExec(1){
+Form::Form():_name("Basic Form"),_gradeSign(1),_gradeExec(1),_signed(false){
   CONSTRUCTOR("Form")
 }
 
-Form::Form(const std::string name, int grade):_name(name),_gradeSign(grade),_gradeExec(1){
+Form::Form(const std::string name, int grade):_name(name),_gradeSign(grade),_gradeExec(1),_signed(false){
   if (_gradeSign < 1)
     throw GradeTooHighException();
   if (_gradeSign > 150)
@@ -13,7 +13,7 @@ Form::Form(const std::string name, int grade):_name(name),_gradeSign(grade),_gra
   PARAMETER("Form")
 }
 
-Form::Form(const Form &other):_name(other._name),_gradeSign(other._gradeSign),_gradeExec(other._gradeExec){
+Form::Form(const Form &other):_name(other._name),_gradeSign(other._gradeSign),_gradeExec(other._gradeExec),_signed(other._signed){
   COPY("Form")
 }
 
@@ -27,7 +27,9 @@ Form &Form::operator=(const Form &other){
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &obj){
-  os << YELLOW << obj.getName() << ": " << RESET << obj.getGradeS() << std::endl;
+  os << YELLOW << obj.getName() << ": " << \
+    RESET << "GradeSign: "<<YELLOW<<obj.getGradeS()<<RESET<<" | GradeExec: "<<YELLOW<<obj.getGradeE() \
+    << RESET<<" | Signed: "<<YELLOW<<obj.getSigned()<<RESET<<std::endl;
   return os;
 }
 
