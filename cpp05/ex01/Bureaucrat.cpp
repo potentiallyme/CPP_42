@@ -38,3 +38,8 @@ const std::string &Bureaucrat::getName() const{
 int Bureaucrat::getGrade() const{
   return _grade;
 }
+
+void Bureaucrat::signForm(Form *f){
+  std::cout << YELLOW<<"Bureaucrat "<<_name<<BLUE<<" [GRADE "<<_grade<<"]"<<RESET<< " has signed ";
+  std::cout << YELLOW<<f->getName()<<BLUE<<" [GRADE "<<f->getGradeS()<<"]"<<RESET<<std::endl;
+}

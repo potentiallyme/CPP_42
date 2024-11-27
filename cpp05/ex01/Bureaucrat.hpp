@@ -1,6 +1,9 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include "Macros.hpp"
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
   public:
@@ -19,15 +22,18 @@ class Bureaucrat{
     const std::string &getName() const;
     int getGrade() const;
 
+    //METHODS:
+    void signForm(Form *);
+
     class GradeTooLowException: public std::exception{
         virtual const char* what() const throw(){
-          return "You're the lowest of the low. GET OUT!";
+          return "Hey, we need paperboys but you're more like a... boy. Get outta here!";
         }
     };
     
     class GradeTooHighException: public std::exception{
         virtual const char* what() const throw(){
-          return "Who do you think you are? Nobody has a rank this high! OUT!";
+          return "What, you think you're above the big BOSS?? Chump, get lost!";
         }
     };
 
