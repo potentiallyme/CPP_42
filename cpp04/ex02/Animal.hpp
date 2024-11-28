@@ -19,7 +19,7 @@ class Animal
 		Animal & operator=(const Animal &);
 		
 		// * Getters / Setters
-		std::string getType();
+		std::string getType() const;
 		void setType(std::string &);
 
 		// * Members

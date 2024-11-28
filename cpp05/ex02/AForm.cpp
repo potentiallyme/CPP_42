@@ -1,5 +1,6 @@
 #include "AForm.hpp"
 #include "WrongGrade.hpp"
+#include "Bureaucrat.hpp"
 
 AForm::AForm(const std::string name, int gradeS, int gradeE):_name(name),_gradeSign(gradeS),_gradeExec(gradeE),_signed(false){
   if (_gradeSign < 1)
@@ -36,10 +37,13 @@ bool AForm::getSigned() const{
   return _signed;
 }
 
+void AForm::setSigned(bool tf){
+  _signed = tf;
+}
+
 void AForm::beSigned(Bureaucrat &b){
   if (b.getGrade() <= _gradeSign){
-    _signed = true;
-    //b.signForm(this);
+    b.signForm(*this);
   }
   else {
     std::cout<<YELLOW<<b.getName()<<BLUE<<" [GRADE "<<b.getGrade()<<"]"<<RED<<" couldn't sign ";
@@ -48,3 +52,19 @@ void AForm::beSigned(Bureaucrat &b){
   }
 }
 
+void AForm::execute(Bureaucrat &b){
+  if (b.getGrade() <= getGradeE()){
+    if (getSigned() == true){
+      b.execForm(*this);
+    }
+    else{
+      std::cerr << RED << "The form must be signed by a " << BLUE << "[GRADE "<<getGradeS()<<"]" \
+        <<YELLOW<< " Bureaucrat" << RED << " before being executed" <<RESET<<std::endl;
+    }
+  }
+  else{
+    std::cerr << YELLOW << b.getName() << BLUE << "[GRADE "<<b.getGrade() \
+      <<"]"<< RED << " can't execute " << YELLOW << getName() << RED << \
+      " because it requires " << BLUE << "[GRADE "<<getGradeE()<<"]"<<RESET<<std::endl;
+  }
+}

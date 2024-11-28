@@ -12,6 +12,7 @@ Dog::Dog(const Dog &other) : Animal(other){
 }
 
 Dog::~Dog(){
+	delete _brain;
 	DESTRUCTOR("Dog")
 }
 
@@ -22,7 +23,7 @@ Dog & Dog::operator=(const Dog &other){
 	return *this;
 }
 
-void Dog::makeSound(){
+void Dog::makeSound() const{
 	std::cout << PURPLE << getType() << ": " << RESET << "Woof woof" << std::endl;
 }
 

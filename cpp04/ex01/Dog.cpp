@@ -12,6 +12,7 @@ Dog::Dog(const Dog &other) : Animal(other){
 }
 
 Dog::~Dog(){
+	delete _brain;
 	DESTRUCTOR("Dog")
 }
 

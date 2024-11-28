@@ -20,7 +20,7 @@ class Cat : public Animal
 		Cat & operator=(const Cat &);
 		
 		// * Members
-		void makeSound();
+		void makeSound() const;
 
 		// * GETTERS / SETTERS
 		Brain *getBrain();

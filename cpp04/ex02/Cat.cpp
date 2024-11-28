@@ -12,6 +12,7 @@ Cat::Cat(const Cat &other) : Animal(other){
 }
 
 Cat::~Cat(){
+	delete _brain;
 	DESTRUCTOR("Cat")
 }
 
@@ -22,7 +23,7 @@ Cat & Cat::operator=(const Cat &other){
 	return *this;
 }
 
-void Cat::makeSound(){
+void Cat::makeSound() const{
 	std::cout << PURPLE << getType() << ": " << RESET << "Meooow" << std::endl;
 }
 

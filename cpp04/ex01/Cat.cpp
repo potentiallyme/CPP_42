@@ -12,6 +12,7 @@ Cat::Cat(const Cat &other) : Animal(other){
 }
 
 Cat::~Cat(){
+	delete _brain;
 	DESTRUCTOR("Cat")
 }
 

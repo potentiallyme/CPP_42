@@ -22,7 +22,7 @@ class Dog : public Animal
 		Dog & operator=(const Dog &);
 		
 		// * Members
-		void makeSound();
+		void makeSound() const;
 
 		// * GETTERS / SETTERS
 		Brain *getBrain();

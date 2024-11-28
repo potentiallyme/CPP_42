@@ -1,7 +1,6 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 #include "Macros.hpp"
-#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -23,10 +22,12 @@ class AForm{
     int getGradeS() const;
     int getGradeE() const;
     bool getSigned() const;
+    void setSigned(bool);
 
     //METHODS:
     void beSigned(Bureaucrat&);
-    virtual void execute(Bureaucrat const &) = 0;
+    void execute(Bureaucrat&);
+    virtual void executeForm() = 0;
 
     class GradeTooLowException: public std::exception{
         virtual const char* what() const throw(){

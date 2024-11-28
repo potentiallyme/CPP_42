@@ -2,19 +2,29 @@
 #define SHRUBBERYCREATIONFORM_HPP
 #include "Macros.hpp"
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm
 {
   public:
+    // CONSTRUCTORS:
     ShrubberyCreationForm();
     ShrubberyCreationForm(const std::string);
-    ~ShrubberyCreationForm();
     ShrubberyCreationForm(const ShrubberyCreationForm &);
+
+    // DESTRUCTOR:
+    ~ShrubberyCreationForm();
+
+    // OPERATORS:
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
-    void execute(Bureaucrat const &);
+
+    // GETTERS / SETTERS:
+    std::string getTarget();
+
+    // METHODS:
+    void executeForm();
+
   private:
     std::string _target;
 };

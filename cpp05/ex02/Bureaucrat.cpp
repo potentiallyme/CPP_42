@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "WrongGrade.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Bureaucrat::Bureaucrat():_name("Basic Bureaucrat"),_grade(1){
   CONSTRUCTOR("Bureaucrat")
@@ -39,7 +40,14 @@ int Bureaucrat::getGrade() const{
   return _grade;
 }
 
-void Bureaucrat::signForm(ShrubberyCreationForm *f){
+void Bureaucrat::signForm(AForm &f){
   std::cout << YELLOW<<"Bureaucrat "<<_name<<BLUE<<" [GRADE "<<_grade<<"]"<<RESET<< " has signed ";
-  std::cout << YELLOW<<f->getName()<<BLUE<<" [GRADE "<<f->getGradeS()<<"]"<<RESET<<std::endl;
+  std::cout << YELLOW<<f.getName()<<BLUE<<" [GRADE "<<f.getGradeS()<<"]"<<RESET<<std::endl;
+  f.setSigned(true);
+}
+
+void Bureaucrat::execForm(AForm &f){
+  std::cout << YELLOW<<"Bureaucrat "<<_name<<BLUE<<" [GRADE "<<_grade<<"]"<<RESET<< " has executed ";
+  std::cout << YELLOW<<f.getName()<<BLUE<<" [GRADE "<<f.getGradeE()<<"]"<<RESET<<std::endl;
+  f.executeForm();
 }
