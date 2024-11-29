@@ -52,3 +52,4 @@ float Fixed::toFloat(void) const{
 int Fixed::toInt(void) const{
 	return (int)(_store_f >> _f_bits);
 }
+

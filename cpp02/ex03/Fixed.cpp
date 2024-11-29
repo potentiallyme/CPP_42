@@ -136,3 +136,4 @@ Fixed& Fixed::max(Fixed &f1, Fixed &f2){
 	return f1 > f2 ? f1 : f2;
 }
 
+

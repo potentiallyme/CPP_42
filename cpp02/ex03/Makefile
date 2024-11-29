@@ -1,4 +1,5 @@
 SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
+
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f

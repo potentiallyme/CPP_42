@@ -22,3 +22,4 @@ float Point::getx() const{
 float Point::gety()const {
 	return _y.toFloat();
 }
+

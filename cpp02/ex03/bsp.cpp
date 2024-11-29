@@ -18,3 +18,4 @@ bool bsp(Point const &a, Point const &b, Point const &c,
 	else
 		return false;
 }
+

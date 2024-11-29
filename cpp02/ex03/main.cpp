@@ -62,3 +62,4 @@ int main( void ) {
 	std::cout << "BSP Return value: " << bsp(Tx, Ty, Tz, P7) << std::endl;
 	return 0; 
 }
+

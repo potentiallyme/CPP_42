@@ -29,3 +29,4 @@ int Fixed::getRawBits(void) const{
 void Fixed::setRawBits(int const raw){
 	_store_f = raw;
 }
+
