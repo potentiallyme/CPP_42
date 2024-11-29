@@ -40,3 +40,4 @@ void FragTrap::highFiveGuys(){
 	std::cout << PURPLE << _name << ": " << RESET << "Here's a high five bud!" << std::endl;
 	std::cout << BLUE << "[" << _name << " has high fived you back]" << RESET << std::endl << std::endl;
 }
+

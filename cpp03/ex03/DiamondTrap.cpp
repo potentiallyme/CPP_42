@@ -56,3 +56,4 @@ void DiamondTrap::whoAmI()
 	std::cout << PURPLE << _name << ": " << RESET;
 	std::cout << "I am named " << this->_name << " in my updated version, but I once was " << ClapTrap::_name << std::endl << std::endl;
 }
+

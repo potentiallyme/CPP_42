@@ -53,3 +53,4 @@ void ScavTrap::guardGate(){
 		std::cout << BRED << "[" << _name << " is already in Gate Keeper Mode]" << RESET << std::endl << std::endl;
 	}
 }
+

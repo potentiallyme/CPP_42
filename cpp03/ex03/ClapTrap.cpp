@@ -123,3 +123,4 @@ void ClapTrap::printStats(){
 	std::cout << "> ATTACK DAMAGE: " << _ad << std::endl;
 	std::cout << RESET << std::endl;
 }
+
