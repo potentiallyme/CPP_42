@@ -6,8 +6,7 @@
 #include "Macros.hpp"
 #include "AMateria.hpp"
 
-class IMateriaSource
-{
+class IMateriaSource{
 	public:
 		// * Constructors
 		// IMateriaSource();

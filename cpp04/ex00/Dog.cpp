@@ -21,3 +21,4 @@ Dog & Dog::operator=(const Dog &other){
 void Dog::makeSound(){
 	std::cout << PURPLE << getType() << ": " << RESET << "Woof woof" << std::endl;
 }
+

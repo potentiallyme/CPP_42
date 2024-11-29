@@ -23,7 +23,6 @@ class Cat : public Animal
 		void makeSound();
 
 	private:
-		//
 };
 
 #endif

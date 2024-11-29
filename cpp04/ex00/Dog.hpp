@@ -23,7 +23,6 @@ class Dog : public Animal
 		void makeSound();
 
 	private:
-		//
 };
 
 #endif

@@ -21,3 +21,4 @@ WrongCat & WrongCat::operator=(const WrongCat &other){
 void WrongCat::makeSound(){
 	std::cout << PURPLE << getType() << ": " << RESET << "Meooow" << std::endl;
 }
+

@@ -5,8 +5,7 @@
 #include <string>
 #include "Macros.hpp"
 
-class Brain
-{
+class Brain{
 	public:
 		// * Constructors
 		Brain();

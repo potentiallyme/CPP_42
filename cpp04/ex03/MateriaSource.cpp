@@ -63,3 +63,4 @@ AMateria* MateriaSource::createMateria(std::string const &type){
 	std::cout << RED << "Materia doesn't exist" << RESET << std::endl;
 	return (NULL);
 }
+

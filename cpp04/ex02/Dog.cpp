@@ -43,3 +43,4 @@ void Dog::setIdeas(std::string idea, int index){
 std::string *Dog::getIdeas(){
 	return _brain->getIdeas();
 }
+

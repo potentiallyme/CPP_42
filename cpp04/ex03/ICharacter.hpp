@@ -8,8 +8,7 @@
 
 class AMateria;
 
-class ICharacter
-{
+class ICharacter{
 	public:
 		// * Constructors
 		// ICharacter();

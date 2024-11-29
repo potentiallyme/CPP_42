@@ -39,3 +39,4 @@ void Brain::setIdeas(std::string idea, int index){
 	else
 		_ideas[index] = idea;
 }
+

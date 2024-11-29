@@ -43,3 +43,4 @@ void Cat::setIdeas(std::string idea, int index){
 std::string *Cat::getIdeas(){
 	return _brain->getIdeas();
 }
+

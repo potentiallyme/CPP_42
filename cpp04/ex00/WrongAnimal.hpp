@@ -27,7 +27,6 @@ class WrongAnimal
 
 	protected:
 		std::string type;
-		
 };
 
 #endif

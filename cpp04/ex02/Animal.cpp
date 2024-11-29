@@ -24,3 +24,4 @@ std::string Animal::getType() const{
 void Animal::setType(std::string &new_type){
 	type = new_type;
 }
+

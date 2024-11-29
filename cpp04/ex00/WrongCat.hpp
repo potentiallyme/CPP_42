@@ -22,7 +22,6 @@ class WrongCat : public WrongAnimal
 		// * Members
 		void makeSound();
 	private:
-		//
 };
 
 #endif

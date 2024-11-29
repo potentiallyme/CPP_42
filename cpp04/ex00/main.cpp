@@ -42,6 +42,5 @@ int main(void)
         
         DESTRUCT
         delete cat;
-
     }
 }

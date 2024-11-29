@@ -21,3 +21,4 @@ Cat & Cat::operator=(const Cat &other){
 void Cat::makeSound(){
 	std::cout << PURPLE << getType() << ": " << RESET << "Meooow" << std::endl;
 }
+

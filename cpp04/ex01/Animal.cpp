@@ -28,3 +28,4 @@ void Animal::setType(std::string &new_type){
 void Animal::makeSound(){
 	std::cout << PURPLE << getType() << ": " << RESET << "Mooooo" << std::endl;
 }
+

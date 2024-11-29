@@ -89,4 +89,3 @@ AMateria *Character::getMateria(int index){
 	return _inventory[index];
 }
 
-

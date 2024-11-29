@@ -5,8 +5,7 @@
 #include <string>
 #include "Macros.hpp"
 
-class Animal
-{
+class Animal{
 	public:
 		// * Constructors
 		Animal();
