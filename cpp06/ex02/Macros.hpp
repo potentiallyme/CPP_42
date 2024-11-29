@@ -13,7 +13,8 @@
 #include <ctime>
 #include <exception>
 #include <cctype>
-#include <iomanip>
+#include <ctime>
+#include <unistd.h>
 
 // Class macros
 #define CONSTRUCTOR(class_name) \
@@ -60,14 +61,14 @@
 #define ORNG "\033[0;38;2;205;105;0m"     // Orange
 #define GOLD "\033[0;38;2;255;215;0m"     // Gold
 #define YLLW "\033[0;38;2;255;255;0m"     // Yellow
-#define GRNN "\033[0;38;2;0;128;0m"       // Dark green
-#define LIME "\033[0;38;2;0;255;0m"       // Lime green
+#define GRNN "\033[0;38;2;0;128;0m"       // Green
+#define LIME "\033[0;38;2;0;255;0m"       // Lime 
 #define CYAN "\033[0;38;2;0;255;255m"     // Cyan
 #define BLEU "\033[0;38;2;80;80;220m"     // Blue
 #define INDI "\033[0;38;2;75;0;130m"      // Indigo
 #define PURP "\033[0;38;2;238;130;238m"   // Purple
 #define MAGN "\033[0;38;2;255;0;255m"     // Magenta
-#define PINK "\033[0;38;2;255;192;203m"   // Rose
+#define PINK "\033[0;38;2;255;192;203m"   // Pink
 #define BROW "\033[0;38;2;165;42;42m"     // Brown
 #define IVRY "\033[0;38;2;255;255;240m"   // Ivory
 #define GRY1 "\033[0;38;2;128;128;128m"   // Grey
@@ -76,7 +77,7 @@
 #define TURQ "\033[0;38;2;64;224;208m"    // Turquoise
 #define CORL "\033[0;38;2;255;127;80m"    // Coral
 #define SALM "\033[0;38;2;250;128;114m"   // Salmon
-#define PLUM "\033[0;38;2;221;160;221m"   // Prune
+#define PLUM "\033[0;38;2;221;160;221m"   // Violet
 #define TEAL "\033[0;38;2;0;128;128m"     
 #define OLIV "\033[0;38;2;128;128;0m"     // Olive
 #define MINT "\033[0;38;2;189;252;201m"   // Mint

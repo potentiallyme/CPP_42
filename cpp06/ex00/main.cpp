@@ -7,8 +7,9 @@ int main(int ac, char *av[]){
   int i = 0;
   while (av[++i]){
     std::cout << BBLUE "## ARG["<<i<<"] ##" RESET<<std::endl;
-    if (av[i][0])
+    if (av[i][0]){
       ScalarConverter::convert(av[i]);
+    }
     std::cout << std::resetiosflags(std::ios::fixed) << std::endl;
   }
 }

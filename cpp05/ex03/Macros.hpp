@@ -2,7 +2,7 @@
 #define MACROS_HPP
 #include <iostream>
 #include <fstream>
-#include <istream>
+#include <istream> 
 #include <ostream>
 #include <sstream>
 #include <limits>
