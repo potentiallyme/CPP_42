@@ -16,5 +16,4 @@ int main(void){
     randomChump("Lily");
     randomChump("Lucy");
     randomChump("Lana");
-
 }

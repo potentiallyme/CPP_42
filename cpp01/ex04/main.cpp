@@ -35,6 +35,7 @@ int main(int ac, char **av){
 		err_msg("Please input a file name, a string to replace, and the string that replaces it.");
 		return (1);
 	}
+
 	std::string filename = av[1];
 	std::string s1 = av[2];
 	std::string s2 = av[3];

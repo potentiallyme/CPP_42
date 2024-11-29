@@ -7,3 +7,4 @@ int main(void){
         horde[i].announce();
     delete [] horde;
 }
+

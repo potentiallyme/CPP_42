@@ -1,4 +1,5 @@
 SRC = main.cpp Harl.cpp
+
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f

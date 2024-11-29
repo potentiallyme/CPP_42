@@ -15,3 +15,4 @@ void Zombie::set_name(std::string name){
     _name = name;
     std::cout << name << " has risen from the dead! Buuurrrrrrrrrhhh" << std::endl;
 }
+
