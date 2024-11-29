@@ -7,7 +7,7 @@ AForm::AForm(const std::string name, int gradeS, int gradeE):_name(name),_gradeS
     throw GradeTooHighException();
   if (_gradeSign > 150)
     throw GradeTooLowException();
-  PARAMETER("AForm")
+  //PARAMETER("AForm")
 }
 
 AForm::~AForm(){

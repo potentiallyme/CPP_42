@@ -9,7 +9,7 @@ FILE	= $(shell ls -lR | grep -F .cpp | wc -l)
 CMP		= 1
 CLEAR 	= @clear
 
-SOURCES := main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+SOURCES := main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 OBJ_DIR := .objs
 OBJ		:= $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))
 
