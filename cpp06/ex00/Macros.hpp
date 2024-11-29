@@ -31,6 +31,13 @@
 #define NEWLINE std::cout<<std::endl;
 #define NNEWLINE std::cout<<std::endl<<std::endl;
 
+// Project specific macros
+#define CHAR1 std::cout<<YELLOW"char: "RESET<<c<<std::endl;
+#define CHAR0 std::cout<<YELLOW"char: "RED"cannot be displayed"RESET<<std::endl;
+#define INT std::cout<<YELLOW"int: "RESET<<i<<std::endl;
+#define FLOAT std::cout<<YELLOW"float: "RESET<<std::fixed<<std::setprecision(1)<<f<<"f"<<std::endl;
+#define DOUBLE std::cout<<YELLOW"double: "RESET<<d<<std::endl;
+
 //Base colors
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
