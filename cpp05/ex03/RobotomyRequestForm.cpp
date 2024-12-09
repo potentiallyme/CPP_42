@@ -40,3 +40,4 @@ void RobotomyRequestForm::executeForm(){
     _odds = true;
   }
 }
+

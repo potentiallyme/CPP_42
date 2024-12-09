@@ -1,5 +1,6 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
+
 #include "Macros.hpp"
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"

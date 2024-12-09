@@ -1,5 +1,6 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
+
 #include "Macros.hpp"
 #include "AForm.hpp"
 

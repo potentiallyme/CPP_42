@@ -43,3 +43,4 @@ void Bureaucrat::signForm(Form *f){
   std::cout << YELLOW<<"Bureaucrat "<<_name<<BLUE<<" [GRADE "<<_grade<<"]"<<RESET<< " has signed ";
   std::cout << YELLOW<<f->getName()<<BLUE<<" [GRADE "<<f->getGradeS()<<"]"<<RESET<<std::endl;
 }
+

@@ -1,5 +1,6 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
+
 #include "Macros.hpp"
 #include "AForm.hpp"
 

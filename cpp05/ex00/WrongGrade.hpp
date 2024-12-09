@@ -1,5 +1,6 @@
 #ifndef WRONGGRADE_HPP
 #define WRONGGRADE_HPP
+
 #include "Macros.hpp"
 
 class WrongGrade : public std::exception{

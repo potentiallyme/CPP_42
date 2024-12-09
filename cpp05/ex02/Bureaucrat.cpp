@@ -51,3 +51,4 @@ void Bureaucrat::execForm(AForm &f){
   std::cout << YELLOW<<f.getName()<<BLUE<<" [GRADE "<<f.getGradeE()<<"]"<<RESET<<std::endl;
   f.executeForm();
 }
+

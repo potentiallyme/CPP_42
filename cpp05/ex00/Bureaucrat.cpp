@@ -27,7 +27,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj){
-  os << YELLOW << obj.getName() << ": " << RESET << obj.getGrade() << std::endl;
+  os << YELLOW << obj.getName() << ": " RESET "Grade: " YELLOW << obj.getGrade() << std::endl;
   return os;
 }
 
@@ -38,3 +38,4 @@ const std::string &Bureaucrat::getName() const{
 int Bureaucrat::getGrade() const{
   return _grade;
 }
+

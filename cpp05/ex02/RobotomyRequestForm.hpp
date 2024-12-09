@@ -1,5 +1,6 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
+
 #include "Macros.hpp"
 #include "AForm.hpp"
 

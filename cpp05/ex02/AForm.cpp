@@ -68,3 +68,4 @@ void AForm::execute(Bureaucrat &b){
       <<YELLOW<< " Bureaucrat" << RED << " before being executed" <<RESET<<std::endl;
   }
 }
+

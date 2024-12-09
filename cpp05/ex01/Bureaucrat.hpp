@@ -1,5 +1,6 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+
 #include "Macros.hpp"
 #include "Form.hpp"
 

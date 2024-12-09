@@ -36,3 +36,4 @@ AForm *Intern::makeForm(const std::string form, const std::string target){
   std::cout << RED << "Lousy intern couldn't create the form. Get him fired. NOW!" << RESET << std::endl;
   return NULL;
 }
+

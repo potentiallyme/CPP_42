@@ -60,4 +60,3 @@ void Form::beSigned(Bureaucrat &b){
     std::cout<<RESET<<" of "<<BLUE<<"[GRADE "<<_gradeSign<<"]"<<std::endl;
   }
 }
-

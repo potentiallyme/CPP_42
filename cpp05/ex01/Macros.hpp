@@ -1,5 +1,6 @@
 #ifndef MACROS_HPP
 #define MACROS_HPP
+
 #include <iostream>
 #include <istream>
 #include <ostream>
@@ -13,13 +14,13 @@
 
 // Class macros
 #define CONSTRUCTOR(class_name) \
-    std::cout<<PURPLE<<class_name<<GREEN<<" Default Constructor called"<<std::endl;
+    std::cout<<PURPLE<<class_name<<GREEN " Default Constructor called" RESET <<std::endl;
 #define DESTRUCTOR(class_name) \
-    std::cout<<PURPLE<<class_name<<RED<<" Destructor called"<<std::endl;
+    std::cout<<PURPLE<<class_name<<RED " Destructor called" RESET <<std::endl;
 #define COPY(class_name) \
-    std::cout<<PURPLE<<class_name<<YELLOW<<" Copy Constructor called"<<std::endl;
+    std::cout<<PURPLE<<class_name<<YELLOW " Copy Constructor called" RESET <<std::endl;
 #define PARAMETER(class_name) \
-    std::cout<<PURPLE<<class_name<<GREEN<<" Parameterized Constructor called"<<std::endl;
+    std::cout<<PURPLE<<class_name<<GREEN " Parameterized Constructor called" RESET <<std::endl;
 
 // Main Test macros
 #define CONSTRUCT std::cout<<BGREEN<<"### CONSTRUCTORS ###"<<RESET<<std::endl;

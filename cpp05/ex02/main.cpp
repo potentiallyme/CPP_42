@@ -96,9 +96,9 @@ int main(void){
   }
   NNEWLINE
   try{
-    std::cout << BYELLOW << "### FAIL SIGN ###" << std::endl;
+    std::cout << BYELLOW << "### FAIL EXEC ###" << std::endl;
     NEWLINE
-    Bureaucrat b3("Bobathan", 75);
+    Bureaucrat b3("Bobathan", 10);
     PresidentialPardonForm f3("Ron");
     NEWLINE
     std::cout << b3 << f3;
@@ -113,3 +113,4 @@ int main(void){
     std::cout << RED << e.what() << RESET << std::endl;
   }
 }
+

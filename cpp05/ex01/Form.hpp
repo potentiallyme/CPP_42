@@ -1,5 +1,6 @@
 #ifndef FORM_HPP
 #define FORM_HPP
+
 #include "Macros.hpp"
 #include "Bureaucrat.hpp"
 

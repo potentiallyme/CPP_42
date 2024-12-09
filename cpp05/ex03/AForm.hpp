@@ -1,5 +1,6 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
+
 #include "Macros.hpp"
 
 class Bureaucrat;

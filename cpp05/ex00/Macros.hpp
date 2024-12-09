@@ -1,5 +1,6 @@
 #ifndef MACROS_HPP
 #define MACROS_HPP
+
 #include <iostream>
 #include <istream>
 #include <ostream>
