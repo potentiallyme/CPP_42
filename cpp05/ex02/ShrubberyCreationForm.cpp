@@ -30,15 +30,19 @@ void ShrubberyCreationForm::executeForm(){
   std::string filename = _target + "_shrubbery";
   std::ofstream file(filename.c_str());
   if (file.is_open()){
-    file << "\n     ccee88oo\n"
-    << "C8O8O8Q8PoOb o8oo\n"
-    << "dOB69QO8PdUOpugoO9bD\n"
-    << "CgggbU8OU qOp qOdoUOdcb\n"
-    << "    6OuU  /p u gcoUodpP\n"
-    << "      \\\\\\//  /douUP\n"
-    << "       \\\\\\////\n         |||/\\\n"
-    << "         |||\\/\n         |||||\n"
-    << ".....//||||\\....\n";
+    file << BGREEN "\n     ccee88oo\n"
+    << "    C8O8O8Q8PoOb o8oo\n"
+    << "  dOB69QO8PdUOpugoO9bD\n"
+    << " CgggbU8OU qOp qOdoUOdcb\n"
+    << "    6OuU  " BYELLOW "/" BGREEN "p u gcoUodpP\n"
+    << BYELLOW "       \\\\\\//  /" BGREEN "douUP\n"
+    << BYELLOW "        \\\\\\////\n"
+	<< "         |||/\\\n"
+    << "         |||\\/\n"    
+	<< "         |||||\n"
+    << GREEN "   ....." BYELLOW "//||||\\" GREEN "....\n"
+	<< PURPLE "\n\nNew shrubbery planted at requested location:\n"
+	<< "--->> " << YELLOW << _target << std::endl << std::endl;
   }
   else{
     std::cerr << RED << "There was an error printing the form " << BRED \

@@ -24,5 +24,15 @@ int main(void){
   catch(std::exception &e){
     std::cout << RED << e.what() << RESET << std::endl;
   }
+  NEWLINE
+  try{
+    Bureaucrat b4("Ron", 1);
+    std::cout << b4;
+	b4.decrementGrade();
+    std::cout << b4;
+  }
+  catch(std::exception &e){
+    std::cout << RED << e.what() << RESET << std::endl;
+  }
 }
 

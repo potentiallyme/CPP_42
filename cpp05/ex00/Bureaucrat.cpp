@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other):_name(other._name),_grade(other.
 }
 
 Bureaucrat::~Bureaucrat(){
-  DESTRUCTOR("Bureaucrat")
+//  DESTRUCTOR("Bureaucrat")
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
@@ -39,3 +39,16 @@ int Bureaucrat::getGrade() const{
   return _grade;
 }
 
+void Bureaucrat::incrementGrade(){
+	std::cout << YELLOW << getName() << RESET " has been promoted t" << std::endl;
+	_grade -= 1;
+	if (_grade < 1)
+		throw GradeTooHighException();
+}
+
+void Bureaucrat::decrementGrade(){
+	std::cout << YELLOW << getName() << RESET " has been demoted one grade lower..." << std::endl;
+	_grade += 1;
+	if (_grade > 150)
+		throw GradeTooLowException();
+}

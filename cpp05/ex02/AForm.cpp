@@ -58,7 +58,7 @@ void AForm::execute(Bureaucrat &b){
       b.execForm(*this);
     }
     else{
-      std::cerr << YELLOW << b.getName() << BLUE << "[GRADE "<<b.getGrade() \
+      std::cerr << YELLOW << b.getName() << BLUE << " [GRADE "<<b.getGrade() \
         <<"]"<< RED << " can't execute " << YELLOW << getName() << RED << \
         " because it requires " << BLUE << "[GRADE "<<getGradeE()<<"]"<<RESET<<std::endl;
     }

@@ -41,7 +41,7 @@ class Form{
     };
 
   private:
-    std::string _name;
+    const std::string _name;
     const int _gradeSign;
     const int _gradeExec;
     bool _signed;

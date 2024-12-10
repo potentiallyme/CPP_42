@@ -20,6 +20,11 @@ class Bureaucrat{
     const std::string &getName() const;
     int getGrade() const;
 
+	//MEMBERS:
+	void incrementGrade();
+	void decrementGrade();
+
+	//EXCEPTIONS:
     class GradeTooLowException: public std::exception{
         virtual const char* what() const throw(){
           return "You're the lowest of the low. GET OUT!";
