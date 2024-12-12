@@ -1,6 +1,7 @@
 #********************************************************************#
 
 NAME = Generate
+
 GPP		= @g++
 FLAGS	= -Wall -Werror -Wextra -std=c++98 -pedantic
 MK		= @mkdir -p

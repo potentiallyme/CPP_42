@@ -20,3 +20,4 @@ int main(void){
 	else
 		std::cout << BLUE "if (&A == C) " RED "FAIL" << std::endl;
 }
+

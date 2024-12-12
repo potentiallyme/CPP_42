@@ -1,5 +1,6 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
+
 #include "Macros.hpp"
 
 class ScalarConverter{

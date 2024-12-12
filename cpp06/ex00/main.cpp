@@ -13,3 +13,4 @@ int main(int ac, char *av[]){
     std::cout << std::resetiosflags(std::ios::fixed) << std::endl;
   }
 }
+

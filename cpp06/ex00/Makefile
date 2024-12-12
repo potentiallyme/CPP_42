@@ -1,6 +1,7 @@
 #********************************************************************#
 
 NAME = Convert
+
 GPP		= @g++
 FLAGS	= -std=c++98 -Wall -Werror -Wextra -pedantic
 MK		= @mkdir -p
