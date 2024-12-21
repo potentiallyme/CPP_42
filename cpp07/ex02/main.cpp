@@ -15,8 +15,8 @@ int main(void)
   std::cout << "a.getSize() = ";
   std::cout << a.getSize() << std::endl;
 
+  NEWLINE
   std::cout << "A basic" << std::endl;
-  std::cout << std::endl;
   for (unsigned  i = 0; i < a.getSize(); i++)
   {
     std::cout << "a[" << i << "] = ";
@@ -28,15 +28,15 @@ int main(void)
   for (unsigned int i = 0; i < a.getSize(); i++)
     a[i] = i;
 
+  NEWLINE
   std::cout << "After setting values" << std::endl;
-  std::cout << std::endl;
   for (unsigned  i = 0; i < a.getSize(); i++)
   {
     std::cout << "a[" << i << "] = ";
     std::cout << a[i] << std::endl;
   }
 
-  std::cout << std::endl;
+  NEWLINE
   std::cout << "b after a has been set to other values" << std::endl;
   for (unsigned  i = 0; i < b.getSize(); i++)
   {
@@ -44,7 +44,7 @@ int main(void)
     std::cout << b[i] << std::endl;
   }
 
-  std::cout << std::endl;
+  NEWLINE
   std::cout << "displaying c after we done c = b" << std::endl;
   for (unsigned  i = 0; i < c.getSize(); i++)
   {
@@ -52,8 +52,8 @@ int main(void)
     std::cout << c[i] << std::endl;
   }
 
-  std::cout << std::endl;
 
+  NEWLINE
   try
   {
     std::cout << "Trying to access a[10] and fill it with 42" << std::endl;
@@ -66,3 +66,4 @@ int main(void)
 
   return 0;
 }
+

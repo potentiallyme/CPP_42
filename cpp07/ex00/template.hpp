@@ -1,5 +1,6 @@
 #ifndef TEMPLATE_HPP
 #define TEMPLATE_HPP
+
 #include "Macros.hpp"
 
 template <typename T>
