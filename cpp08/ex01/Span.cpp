@@ -25,6 +25,7 @@ void Span::addNumber(int n){
 void Span::addNumber(std::vector<int>::iterator b, std::vector<int>::iterator e){
 	if (_vec.size() + std::distance(b, e) > _N)
 		throw std::out_of_range("Span is full");
+	_vec.insert(_vec.end(), b, e);
 }
 
 int Span::shortestSpan(){
