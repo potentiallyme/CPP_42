@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <sstream>
 #include <stack>
+#include <cctype>
 
 // Class macros
 #define CONSTRUCTOR(class_name) \
