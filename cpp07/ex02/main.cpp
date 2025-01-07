@@ -16,7 +16,7 @@ int main(void)
   std::cout << a.getSize() << std::endl;
 
   NEWLINE
-  std::cout << "A basic" << std::endl;
+  std::cout << YELLOW "a basic" RESET << std::endl;
   for (unsigned  i = 0; i < a.getSize(); i++)
   {
     std::cout << "a[" << i << "] = ";
@@ -29,7 +29,7 @@ int main(void)
     a[i] = i;
 
   NEWLINE
-  std::cout << "After setting values" << std::endl;
+  std::cout << YELLOW "After setting values" RESET << std::endl;
   for (unsigned  i = 0; i < a.getSize(); i++)
   {
     std::cout << "a[" << i << "] = ";
@@ -37,7 +37,7 @@ int main(void)
   }
 
   NEWLINE
-  std::cout << "b after a has been set to other values" << std::endl;
+  std::cout << YELLOW "b after a has been set to other values" RESET << std::endl;
   for (unsigned  i = 0; i < b.getSize(); i++)
   {
     std::cout << "b[" << i << "] = ";
@@ -45,7 +45,7 @@ int main(void)
   }
 
   NEWLINE
-  std::cout << "displaying c after we done c = b" << std::endl;
+  std::cout << YELLOW "Displaying c ( c = b )" RESET << std::endl;
   for (unsigned  i = 0; i < c.getSize(); i++)
   {
     std::cout << "c[" << i << "] = ";
@@ -56,7 +56,7 @@ int main(void)
   NEWLINE
   try
   {
-    std::cout << "Trying to access a[10] and fill it with 42" << std::endl;
+    std::cout << YELLOW "Trying to access a[10] and fill it with 42" RESET << std::endl;
     a[10] = 42;
   }
   catch (Array<int>::OutOfBoundsException &e)

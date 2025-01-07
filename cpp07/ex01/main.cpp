@@ -2,7 +2,7 @@
 #include "Macros.hpp"
 
 void *increment(int &i) {
-    i++;
+    i += 100;
     return (0);
 }
 
@@ -14,21 +14,21 @@ void *transform(std::string &s) {
 int main(void)
 {
 	NEWLINE
-    int *a = new int[5];
+    int *a = new int[10];
 
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 10; i++){
         a[i] = i;}
 	
 	std::cout << YELLOW "# BEFORE #" BLUE << std::endl;
 
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 10; i++){
         std::cout << a[i] << std::endl;}
 	
     iter(a, 5, increment);
 	NEWLINE
 	std::cout << YELLOW "# AFTER #" BLUE << std::endl;
 
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 10; i++){
         std::cout << a[i] << std::endl;}
 	
     delete[] a;
