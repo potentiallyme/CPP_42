@@ -1,6 +1,6 @@
 #********************************************************************#
 
-NAME = easyFind
+NAME = easyfind
 GPP		= @g++
 
 FLAGS	= -Wall -Werror -Wextra -std=c++98 -pedantic
