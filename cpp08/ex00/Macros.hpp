@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <vector>
 #include <list>
+#include <cstring>
+#include <sstream>
 
 // Class macros
 #define CONSTRUCTOR(class_name) \
