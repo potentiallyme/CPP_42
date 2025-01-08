@@ -26,9 +26,9 @@ int parseline(int year, int month, int day, double btc, std::string btcRate, std
 		return (print_error("Invalid month => ", month));
 	if (day > max_days[month - 1] || day < 1)
 		return (print_error("Invalid day => ", day));
-	if (btc < 0.00)
+	if (btc < 0.01)
 		return (print_error("Not a positive number => ", btc));
-	if (btc > 1000.00)
+	if (btc > 999.99)
 		return (print_error("Too large a number => ", btc));
 	return 1;
 }
@@ -67,7 +67,7 @@ void bitcoinExchange(const std::string csvfile, const std::string inputfile){
 
 	std::getline(file, line);
 	if (line != "date | value")
-		throw InitException("Invalid input on line 1");
+		throw InitException("Invalid title line");
 	while (!file.eof()){
 		std::string fulldate;
 		std::getline(file, line);
@@ -92,6 +92,8 @@ void bitcoinExchange(const std::string csvfile, const std::string inputfile){
 		if (parseline(year, month, day, val, btcRate, line, fulldate)){
 			std::map<std::string, double>::iterator it = rates.end();
 			it = rates.lower_bound(fulldate);
+			if (it != rates.begin() && it->first != fulldate)
+				it--;
 			std::cout << fulldate << " => " << val << " = " << val * it->second << std::endl;
 		}
 	}
