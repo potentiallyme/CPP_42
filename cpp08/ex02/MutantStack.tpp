@@ -40,3 +40,4 @@ typename MutantStack<T>::c_itr MutantStack<T>::end() const
 {
 	return (this->c.end());
 }
+
