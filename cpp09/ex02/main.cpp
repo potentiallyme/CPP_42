@@ -1,27 +1,26 @@
 #include "PmergeMe.hpp"
+#include <deque>
+#include <vector>
 
-long int getSum(long n){
-	return n * (n + 1) / 2;
+int main(int ac , char **av){
+    try{
+        if(ac > 2){
+            PmergeMe<std::deque<int > > Deque(av);
+            PmergeMe<std::vector<int > > Vector(av);
+
+            std::cout << "Before: " << Deque << std::endl;
+            Deque.sort();
+            Vector.sort();
+            std::cout << "After: " << Deque << std::endl;
+            
+            Deque.sort_time();
+            Vector.sort_time();
+
+        }else 
+            throw "Format: ./PmergeMe value1 value2 value3 ... valueN";
+    }catch(MyException &e){
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+    return 0;
 }
 
-bool isPos(const std::string& s){
-	for (size_t i = 0; i < s.length(); i++){
-		if (!isdigit(s[i]))
-			return false;
-	}
-	return !s.empty();
-}
-
-std::string myItoa(int n){
-	std::stringstream ss;
-	ss << n;
-	return ss.str();
-}
-
-int main(int ac, char **av){
-	try{
-		if (ac < 2)
-			std::cerr << RED "Not enough arguments\nFormat: ./PmergeMe val1 val2 val3 ... valN" RESET << std::endl;
-
-	}
-}

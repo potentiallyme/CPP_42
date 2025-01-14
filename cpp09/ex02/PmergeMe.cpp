@@ -6,7 +6,7 @@ PmergeMe::~PmergeMe(){}
 PmergeMe::PmergeMe(const PmergeMe& o):_vec(o._vec),_deq(o._deq){}
 
 PmergeMe &PmergeMe::operator=(const PmergeMe& o){
-	if (*this != other){
+	if (*this != o){
 		_vec = o._vec;
 		_deq = o._deq;
 	}
