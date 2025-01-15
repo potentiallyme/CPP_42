@@ -1,9 +1,6 @@
 #ifndef MACROS_HPP
 #define MACROS_HPP
-#include <iostream>
 #include <cstdlib>
-#include <sstream>
-#include <stack>
 #include <cctype>
 
 // Class macros
@@ -17,9 +14,9 @@
     std::cout<<PURPLE<<class_name<<GREEN " Parameterized Constructor called" RESET<<std::endl;
 
 // Main Test macros
-#define CONSTRUCT std::cout<<BGREEN"### CONSTRUCTORS ###"RESET<<std::endl;
-#define TESTS std::cout<<BBLUE"### TESTS ###"RESET<<std::endl;
-#define DESTRUCT std::cout<<BRED"### DESTRUCTORS ###"RESET<<std::endl;
+#define CONSTRUCT std::cout<<BGREEN "### CONSTRUCTORS ###" RESET<<std::endl;
+#define TESTS std::cout<<BBLUE "### TESTS ###" RESET<<std::endl;
+#define DESTRUCT std::cout<<BRED "### DESTRUCTORS ###" RESET<<std::endl;
 #define NEWLINE std::cout<<std::endl;
 #define NNEWLINE std::cout<<std::endl<<std::endl;
 #define WHAT std::cout<<RED<<e.what()<<std::endl;

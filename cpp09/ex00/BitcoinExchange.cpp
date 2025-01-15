@@ -1,4 +1,10 @@
 #include "BitcoinExchange.hpp"
+#include "Macros.hpp"
+#include <iostream>
+#include <string> 
+#include <sstream>
+#include <fstream>
+#include <map>
 
 int parseline(int year, int month, int day, double btc, std::string btcRate, std::string line, std::string fulldate){
 	size_t pos = line.find("|");

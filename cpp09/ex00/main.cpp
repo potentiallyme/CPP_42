@@ -1,4 +1,6 @@
 #include "BitcoinExchange.hpp"
+#include <iostream>
+#include "Macros.hpp"
 
 int main(int ac, char **av){
 	if (ac < 2){

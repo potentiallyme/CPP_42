@@ -13,11 +13,11 @@ int main(int ac , char **av){
             Vector.sort();
             std::cout << "After: " << Deque << std::endl;
             
-            Deque.sort_time();
-            Vector.sort_time();
+            Deque.sortTime();
+            Vector.sortTime();
 
         }else 
-            throw "Format: ./PmergeMe value1 value2 value3 ... valueN";
+            throw MyException("Format: ./PmergeMe value1 value2 value3 ... valueN");
     }catch(MyException &e){
         std::cerr << "Error: " << e.what() << std::endl;
     }

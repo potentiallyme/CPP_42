@@ -1,13 +1,14 @@
 #ifndef RPN_HPP
 #define RPN_HPP
-#include "Macros.hpp"
+#include <string>
+#include <stack> 
 
 class Rpn{
         public:
-                Rpn(){};
-                Rpn(const Rpn&){};
-                Rpn &operator=(const Rpn&){*this = ;
-                ~Rpn(){};
+                Rpn();
+                Rpn(const Rpn&);
+                Rpn &operator=(const Rpn&);
+                ~Rpn();
 
                 void calc_total(const std::string);
                 void switch_func(int,int,int);

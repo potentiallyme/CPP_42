@@ -1,5 +1,6 @@
 #ifndef MACROS_HPP
 #define MACROS_HPP
+
 #include <cstdlib>
 #include <ctime>
 

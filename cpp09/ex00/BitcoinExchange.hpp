@@ -1,6 +1,7 @@
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
-#include "Macros.hpp"
+#include <cstring>
+#include <string>
 
 class InitException : public std::exception {
 	private:

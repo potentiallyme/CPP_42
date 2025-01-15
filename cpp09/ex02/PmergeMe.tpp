@@ -44,7 +44,7 @@ PmergeMe<Container>::PmergeMe(char **av){
        container.push_back(n);
        }
     if(container.size() != countCheck(args_string))
-        throw MyException("Bad size");
+        throw MyException("Value too large/small");
 }
 
 template <typename Container>
@@ -57,7 +57,7 @@ size_t PmergeMe<Container>::countCheck(std::string &str){
             while(str[i] != ' ' && str[i] != '\0')
             {
                 if(!std::isdigit( str[i]) && str[i] != '+')
-                    throw MyException("Isn't digit");
+                    throw MyException("Not a digit");
                 i++;
             }
         }
@@ -76,7 +76,7 @@ PmergeMe<Container>::PmergeMe(){
 }
 
 template <typename Container>
-void PmergeMe<Container>::insert(Container &main, Container &pend, ValueType odd, Container &left, Container &vec, bool is_odd, int order) {
+void PmergeMe<Container>::doInsert(Container &main, Container &pend, ValueType odd, Container &left, Container &vec, bool is_odd, int order) {
     Iterator end;
     if (pend.size() == 1) {
         end = std::upper_bound(main.begin(), main.end(), *pend.begin());
@@ -107,30 +107,31 @@ void PmergeMe<Container>::insert(Container &main, Container &pend, ValueType odd
             jc++;
         }
     }
-    Container yaslam;
+    Container tmp;
     if (is_odd) {
         end = std::upper_bound(main.begin(), main.end(), odd);
         main.insert(end, odd);
     }
     for (Iterator i = main.begin(); i != main.end(); i++) {
         Iterator it = std::find(vec.begin(), vec.end(), *i);
-        yaslam.insert(yaslam.end(), it - (order - 1), it + 1);
+        tmp.insert(tmp.end(), it - (order - 1), it + 1);
     }
-    yaslam.insert(yaslam.end(), left.begin(), left.end());
-    vec = yaslam;
+    tmp.insert(tmp.end(), left.begin(), left.end());
+    vec = tmp;
 }
 template <typename Container>
 void PmergeMe<Container>::sort(){
-    sort(container);
+    sortCont(container);
 }
 
 template <typename Container>
-void PmergeMe<Container>::sort(Container &vec) {
+void PmergeMe<Container>::sortCont(Container &vec) {
     static int order = 1;
     if(order == 1)
         _start = clock();
     int unit_size = vec.size() / order;
-    if (unit_size < 2) return;
+    if (unit_size < 2) 
+		return;
 
     bool is_odd = unit_size % 2 == 1;
     Iterator start = vec.begin();
@@ -145,7 +146,7 @@ void PmergeMe<Container>::sort(Container &vec) {
     }
 
     order *= 2;
-    sort(vec);
+    sortCont(vec);
     order /= 2;
 
     Container main;
@@ -162,35 +163,37 @@ void PmergeMe<Container>::sort(Container &vec) {
         main.push_back(*(it + order - 1));
     }
 
-    if (is_odd) odd = *(end + order - 1);
+    if (is_odd) 
+		odd = *(end + order - 1);
 
     left.insert(left.end(), end + (order * is_odd), vec.end());
 
     if (is_odd || !pend.empty()) 
-        insert(main, pend, odd, left, vec, is_odd, order);
+        doInsert(main, pend, odd, left, vec, is_odd, order);
     if(order == 1)
         _end = clock();
 
 }
 
 template <typename Container>
-void PmergeMe<Container>::sort_time() {
-    float elapsedTime = time();
-    std::cout << "Time to process a range of " << container.size() << " elements with " << containerType() << " : " << std::fixed << std::setprecision(6) << elapsedTime << " s" << std::endl;
-}
-template <typename Container>
-float PmergeMe<Container>::time() {
-    return static_cast<float>(_end - _start) / CLOCKS_PER_SEC;
+std::string PmergeMe<Container>::containerType(){
+	if(typeid(container) == typeid(std::vector<typename Container::value_type>))
+		return "std::vector";
+	else if (typeid(container) == typeid(std::deque<typename Container::value_type>)){
+		return "std::deque";
+	}else if (typeid(container) == typeid(std::list<typename Container::value_type>)){
+		return "std::list";
+	}
+	return "unkown";
 }
 
 template <typename Container>
-std::string PmergeMe<Container>::containerType(){
-    if(typeid(container) == typeid(std::vector<typename Container::value_type>))
-        return "std::vector";
-    else if (typeid(container) == typeid(std::deque<typename Container::value_type>)){
-        return "std::deque";
-    }else if (typeid(container) == typeid(std::list<typename Container::value_type>)){
-        return "std::list";
-    }
-    return "bad trip";
+float PmergeMe<Container>::retTime() {
+	return static_cast<float>(_end - _start) / CLOCKS_PER_SEC;
+}
+
+template <typename Container>
+void PmergeMe<Container>::sortTime() {
+    float elapsedTime = retTime();
+    std::cout << "Time to process a range of " << container.size() << " elements with " << containerType() << " : " << std::fixed << std::setprecision(6) << elapsedTime << " s" << std::endl;
 }

@@ -5,7 +5,6 @@
 
 template <typename Container>
 class PmergeMe{
-	Container container;
 	public:
 		PmergeMe();
 		/*PmergeMe(const PmergeMe&);*/
@@ -14,18 +13,19 @@ class PmergeMe{
 
 		typedef typename Container::value_type ValueType;
 		typedef typename Container::iterator Iterator;
-		void sort_time();
+		void sortTime();
 		void sort();
 		typename Container::iterator begin();
 		typename Container::iterator end();
 	private:
+		Container container;
 		time_t _start;
 		time_t _end;
-		float time();
+		float retTime();
 		int jacobsthal(int);
 		size_t countCheck(std::string&);
-		void sort(Container &);
-		void insert(Container &, Container &, ValueType, Container &, Container &, bool, int);
+		void sortCont(Container &);
+		void doInsert(Container &, Container &, ValueType, Container &, Container &, bool, int);
 		std::string containerType();
 };
 
